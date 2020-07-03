@@ -36,5 +36,6 @@ public class TestPostJPAMapping {
 
         assertEquals("Hello World",postTest.getTitle());
 
+
     }
 }
