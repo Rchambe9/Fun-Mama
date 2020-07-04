@@ -1,4 +1,10 @@
-package org.wcci.blog.storage;
+package org.wcci.blog.storage.repositories;
 
-public interface HeadingRepository {
+import org.springframework.data.repository.CrudRepository;
+import org.wcci.blog.entities.Heading;
+
+import java.util.Optional;
+
+public interface HeadingRepository extends CrudRepository<Heading, Long> {
+ Optional<Heading> findBySubject(String headingSubject);
 }

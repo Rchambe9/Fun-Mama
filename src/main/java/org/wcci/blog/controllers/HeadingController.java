@@ -11,7 +11,7 @@ import org.wcci.blog.storage.HeadingStorage;
 
 @Controller
 public class HeadingController {
-    private HeadingStorage campusStorage;
+    private HeadingStorage headingStorage;
     private AuthorStorage authorStorage;
 
     public HeadingController(HeadingStorage headingStorage, AuthorStorage authorStorage) {
@@ -19,16 +19,16 @@ public class HeadingController {
         this.authorStorage = authorStorage;
     }
 
-    @GetMapping("headings/{headingName}")
-    public String showSingleHeading(@PathVariable String headingName, Model model) {
-        model.addAttribute("heading", headingStorage.findHeadingByName(headingName));
+    @GetMapping("headings/{headingSubject}")
+    public String showSingleHeading(@PathVariable String headingSubject, Model model) {
+        model.addAttribute("heading", headingStorage.findHeadingBySubject(headingSubject));
         model.addAttribute("authors", authorStorage.findAllAuthors());
         return "heading-template";
     }
 
     @GetMapping("headings")
     public String showAllHeadings(Model model){
-        model.addAttribute("headings", headingStorage.findAllHeadings());
+        model.addAttribute("headings", headingStorage.findAllHeading());
         return "home-template";
     }
     @PostMapping("/headings/add")
@@ -44,4 +44,4 @@ public class HeadingController {
 
 
 
-}
+

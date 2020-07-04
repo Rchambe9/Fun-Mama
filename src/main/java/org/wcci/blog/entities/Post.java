@@ -14,22 +14,25 @@ public class Post {
     @GeneratedValue
     private long id;
     private String title;
+    private String category;
     private String body;
     private String publishDate;
+
 
     @ManyToMany
     private Collection<Author> authors;
     private String name;
     private String posts;
-    private String category;
+
     @ManyToOne
+
     private Heading heading;
 
     //  default JPA constructor
     protected Post() {}
 
 // constructor for post class
-    public  Post(String title, Author...authors, String category, Heading topic, String publishDate, String body) {
+    public  Post(String title, String publishDate, String category, String body, Heading heading, Author... authors) {
         this.title = title;
         this.body = body;
         this.publishDate = publishDate;

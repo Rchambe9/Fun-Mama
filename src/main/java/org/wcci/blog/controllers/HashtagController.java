@@ -4,27 +4,27 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-public class HashtagController {
-    import org.springframework.stereotype.Controller;
+import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.wcci.blog.entities.Hashtag;
 
-    @Controller
-    public class ReviewController {
+@Controller
+    public class HashtagController {
 
-        private Hashtag review;
+        private Hashtag hashtag;
 
-        public ReviewController(){
-            review = new Review("Ben's Burgers", "Ben","2013", 5, "This is a good cookbook.");
+        public HashtagController(){
+            hashtag = new Hashtag("", "","", 5, "");
         }
 
-        @RequestMapping("/review")
-        public String retrieveReview(Model model){
-            model.addAttribute("reviewToDisplay", review);
-            return "review-template";
+        @RequestMapping("/hashtag")
+        public String retrieveHashtag(Model model){
+            model.addAttribute("reviewToDisplay", hashtag);
+            return "hashtag-template";
 
         }
 
     }
 
-}
+
