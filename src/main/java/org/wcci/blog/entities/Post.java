@@ -72,9 +72,9 @@ public class Post {
         return "Post{" +
                 "id=" + id +
                 ", title='" + title + '\'' +
-                ", isbn='" + publishDate + '\'' +
-                ", description='" + category + '\'' +
-                ", campus=" + heading +
+                ", publishDate='" + publishDate + '\'' +
+                ", category='" + category + '\'' +
+                ", heading=" + heading +
                 '}';
     }
 

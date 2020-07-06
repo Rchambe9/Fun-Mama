@@ -1,10 +1,66 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.o
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/style.css"/>
+    <link rel="stylesheet" href="/css/layout.css"/>
+
 </head>
 <body>
-$END$
+<div class="container">
+    <header th:replace="fragments/header :: header" class="header">
+    </header>
+
+    <main>
+        <section>
+            <h2>Topics</h2>
+            <ul class="headings__list">
+                <li th:each="heading: ${headings}" class="headings__list-item">
+                    <a th:text="${heading.subject}" th:href="@{'/headings/'+${heading.subject}}"
+                       class="headings__link">Adventure</a>
+                            <br>
+                    <a class="headings__link">Activites & Crafts</a>
+                        <br>
+                    <a class="headings__link">Parenting</a>
+                    <br>
+                    <a class="headings__link">Resource Guide</a>
+                </li>
+            </ul>
+            <form action="headings/add" method="POST" class="new-heading-form">
+                <label for="new-heading__subject-input" class="form__label">
+                    New Topic:
+                </label>
+                <input type="text" name="subject" class="form__subject-input" id="new-campus__name-input">
+                <label for="new-campus__description-input" class="form__label">
+                    New campus description:
+                </label>
+                <textarea name="description" class="form__description-input"
+                          id="new-campus__description-input"></textarea>
+                <button class="form__submit-button" id="new-campus__submit-button">Submit</button>
+
+            </form>
+        </section>
+        <section>
+            <h2>Authors</h2>
+            <ul class="authors__list">
+                <li th:each="author: ${authors}" class="authors__list-item">
+                    <a th:text="${author.firstName}+' '+${author.lastName}" th:href="@{'/authors/'+${author.id}}"
+                       class="authors__link">Columbus</a>
+                </li>
+            </ul>
+            <form action="authors/add" method="POST" class="new-author-form">
+                <label for="new-author__first-name-input" class="form__label">New author first name:</label>
+                <input type="text" name="firstName" id="new-author__first-name-input">
+                <label for="new-author__last-name-input" class="form__label">New author last name:</label>
+                <input type="text" name="lastName" id="new-author__last-name-input">
+                <button type="submit">Submit</button>
+            </form>
+        </section>
+    </main>
+</div>
 </body>
 </html>
