@@ -2,12 +2,13 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:th="http://www.thymeleaf.o
 <head>
-    <meta charset="UTF-8">
+    <meta charset=" xmlns:th="http://www.w3.org/1999/xhtml" xmlns:th="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.w3.org/1999/xhtml" UTF-8">
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Document</title>
-    <link rel="stylesheet" href="/css/style.css"/>
-    <link rel="stylesheet" href="/css/layout.css"/>
+    <link rel="stylesheet" href="src\main\resources\static\css\allcss.css"/>
+    <link rel="stylesheet" href="src\main\resources\static\css\layout.css"/>
 
 </head>
 <body>
@@ -17,40 +18,54 @@
 
     <main>
         <section>
-            <h2>Topics</h2>
+            <h2>Our Topics</h2>
             <ul class="headings__list">
-                <li th:each="heading: ${headings}" class="headings__list-item">
-                    <a th:text="${heading.subject}" th:href="@{'/headings/'+${heading.subject}}"
-                       class="headings__link">Adventure</a>
-                            <br>
+                <a th:each="heading: ${headings}" class="headings__list-item">
+                    <a th:text="${heading.subject}" th:href="@{'/headings/'+${heading.subject}}"</a>
+
+                    <a class="headings__link">Adventure</a>
+                    <br>
                     <a class="headings__link">Activites & Crafts</a>
-                        <br>
-                    <a class="headings__link">P</a>
+                    <br>
+                    <a class="headings__link">Parenting</a>
+                    <br>
+                    <a class="headings__link">Child Development</a>
                     <br>
                     <a class="headings__link">Resource Guide</a>
-                </li>
+                    <br>
+
             </ul>
             <form action="headings/add" method="POST" class="new-heading-form">
                 <label for="new-heading__subject-input" class="form__label">
-                    New Topic:
+                    Add a New Topic:
                 </label>
                 <input type="text" name="subject" class="form__subject-input" id="new-campus__name-input">
-                <label for="new-campus__description-input" class="form__label">
-                    New campus description:
+                <label for="new-heading__category-input" class="form__label">
+                    Topic Category:
                 </label>
-                <textarea name="description" class="form__description-input"
-                          id="new-campus__description-input"></textarea>
+                <textarea name="category" class="form__category-input"
+                          id="new-heading__category-input"></textarea>
                 <button class="form__submit-button" id="new-campus__submit-button">Submit</button>
 
             </form>
         </section>
         <section>
-            <h2>Authors</h2>
+            <h2>Our Authors</h2>
             <ul class="authors__list">
-                <li th:each="author: ${authors}" class="authors__list-item">
-                    <a th:text="${author.firstName}+' '+${author.lastName}" th:href="@{'/authors/'+${author.id}}"
-                       class="authors__link">Columbus</a>
-                </li>
+                <a th:each="author: ${authors}" class="authors__list-item">
+                    <a th:text="${author.firstName}+' '+${author.lastName}" th:href="@{'/authors/'+${author.id}}"</a>
+                </a>
+                <a class="authors__link">David Williams</a>
+                <br>
+                <a class="authors__link">Paulette Nix</a>
+                <br>
+                <a class="authors__link">Lanae Roberts</a>
+                <br>
+                <a class="authors__link">Matthew Lewis</a>
+                <br>
+                <a class="authors__link">Robyn Chambers</a>
+                <br>
+
             </ul>
             <form action="authors/add" method="POST" class="new-author-form">
                 <label for="new-author__first-name-input" class="form__label">New author first name:</label>
