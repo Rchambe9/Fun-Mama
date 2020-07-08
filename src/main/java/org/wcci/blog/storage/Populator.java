@@ -1,11 +1,10 @@
 package org.wcci.blog.storage;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 import org.wcci.blog.entities.Author;
+import org.wcci.blog.entities.Hashtag;
 import org.wcci.blog.entities.Post;
-import org.wcci.blog.entities.Heading;
 import org.wcci.blog.storage.repositories.AuthorRepository;
 import org.wcci.blog.storage.repositories.PostRepository;
 import org.wcci.blog.storage.repositories.HeadingRepository;
@@ -21,7 +20,7 @@ public class Populator {
 
     @Override
     public void run(String... args) throws Exception {
-        Heading adventure = new Heading("Adventure", "Adventure provides opportunity for personal growth, development, " +
+        Hashtag fun = new Hashtag("Adventure", "Adventure provides opportunity for personal growth, development, " +
                 "learning, and self discovery.");
         Heading parenting = new Heading("Parenting", " Gain skills for discipline, boundaries & even self-care! ");
         Heading development = new Heading("Development", "Children learn in a variety of ways.");

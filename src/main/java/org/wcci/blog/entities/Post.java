@@ -1,52 +1,43 @@
 package org.wcci.blog.entities;
 
 import javax.persistence.*;
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collection;
+import java.util.List;
 import java.util.Objects;
 
-// create an entity
 @Entity
 public class Post {
-//    need id to make a database table
+
     @Id
     @GeneratedValue
-    private long id;
-    private String title;
-    private String category;
+    private Long id;
+    private String postTitle;
     private String body;
-    private String publishDate;
-
+    private int publishDate;
+    private String category;
 
     @ManyToMany
+    private Collection<Hashtag> hashtags;
     private Collection<Author> authors;
-    private String name;
-    private String posts;
-
-    @ManyToOne
-
-    private Heading heading;
 
     //  default JPA constructor
     protected Post() {}
 
 // constructor for post class
-    public  Post(String title, String publishDate, String category, String body, Heading heading, Author... authors) {
-        this.title = title;
+    public  Post(String postTitle, int publishDate, String category, String body, Hashtag hashtag, Author... authors) {
+        this.postTitle = postTitle;
         this.body = body;
         this.publishDate = publishDate;
-        this.category = category;
-        this.authors = new ArrayList<>(Arrays.asList(authors));
-        this.heading = heading;
+        this.author = authors;
+        this.hashtags = hashtags;
     }
 
     public long getId() {
         return id;
     }
 
-    public String getTitle() {
-        return title;
+    public String getPostTitle() {
+        return postTitle;
     }
 
     public Collection<Author> getAuthors() {
@@ -65,16 +56,17 @@ public class Post {
         return publishDate;
     }
 
-    public Heading getCampus() { return heading; }
+    public Hashtag getHashtag() { return hashtags; }
 
     @Override
     public String toString() {
         return "Post{" +
                 "id=" + id +
-                ", title='" + title + '\'' +
+                ", postTitle='" + postTitle + '\'' +
                 ", publishDate='" + publishDate + '\'' +
                 ", category='" + category + '\'' +
-                ", heading=" + heading +
+                ", body='" + body + '\'' +
+                ", hashtag=" + hashtags +
                 '}';
     }
 
@@ -84,15 +76,28 @@ public class Post {
         if (o == null || getClass() != o.getClass()) return false;
         Post post = (Post) o;
         return id == post.id &&
-                Objects.equals(title, post.title) &&
+                Objects.equals(postTitle, post.postTitle) &&
                 Objects.equals(publishDate, post.publishDate) &&
                 Objects.equals(category, post.category) &&
-                Objects.equals(heading, post.heading);
+                Objects.equals(body, post.body) &&
+                Objects.equals(hashtags, post.hashtags);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, title, publishDate, category, heading);
+        return Objects.hash(id, postTitle, publishDate, category, body, hashtags);
     }
 }
 
+//    Author author1 = new Author("Sarah Greene");
+//    Author author2 = new Author("Jane Doe");
+//    Author author3 = new Author("John Doe");
+//
+//        authorRepo.save(author1);
+//                authorRepo.save(author2);
+//                authorRepo.save(author3);
+//
+//                ArrayList<Author> authors = new ArrayList<Author>();
+//        authors.add(author1);
+//        authors.add(author2);
+//        }

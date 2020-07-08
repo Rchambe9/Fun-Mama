@@ -1,18 +1,45 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:th="http://www.thymeleaf.o
-<head>
-    <meta charset=" xmlns:th="http://www.w3.org/1999/xhtml" xmlns:th="http://www.w3.org/1999/xhtml"
-      xmlns:th="http://www.w3.org/1999/xhtml" UTF-8">
-    <meta charset="UTF-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Document</title>
-    <link rel="stylesheet" href="src\main\resources\static\css\allcss.css"/>
-    <link rel="stylesheet" href="src\main\resources\static\css\layout.css"/>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Fun Grandma</title>
+
+    <!-----Font Awesome Icons----->
+    <link rel="stylesheet" href="../../css/all.css">
+
+    <link rel="stylesheet" href="../../static/css/layout.css">
+    <link rel="stylesheet" href="../../static/css/style.css">
 </head>
 <body>
 <div class="container">
+    <h1 style="text-align: center;"> Fun Grandma</h1>
+    <h2 style="text-align: center;"> Activities 4 Kids</h2>
+<!--    <div class="section">-->
+<!--        <nav class="nav">-->
+            <ul class="nav-items">
+                <li class="nav-link">
+                    <a href="#">Home</a>
+                </li>
+                <li class="nav-link">
+                    <a href="#">Activities & Crafts</a>
+                </li>
+                <li class="nav-link">
+                    <a href="#">Child Development</a>
+                </li>
+                <li class="nav-link">
+                    <a href="#">Resource Guide</a>
+                </li>
+                <li class="nav-link">
+                    <a href="#">Contact Us</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</div>
+
     <header th:replace="fragments/header :: header" class="header">
     </header>
 
@@ -36,7 +63,7 @@
 
             </ul>
             <form action="headings/add" method="POST" class="new-heading-form">
-                <label for="new-heading__subject-input" class="form__label">
+                <label for="new-hashtag__category-input" class="form__label">
                     Add a New Topic:
                 </label>
                 <input type="text" name="subject" class="form__subject-input" id="new-campus__name-input">

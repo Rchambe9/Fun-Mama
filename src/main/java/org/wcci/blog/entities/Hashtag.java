@@ -1,41 +1,64 @@
 package org.wcci.blog.entities;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.ManyToMany;
+import java.util.Collection;
+import java.util.Objects;
+
+@Entity
 public class Hashtag {
+    @Id
+    @GeneratedValue
+    private Long id;
+    private String hashtag;
+    @ManyToMany(mappedBy = "hashtags")
+    private Collection<Post> posts;
 
-        private String postTitle;
-        private String postAuthor;
-        private String postPublishDate;
-        private int rating;
-        private String content;
+    protected Hashtag() {}
 
-        public Hashtag(String postTitle, String postAuthor, String postPublishDate, int rating, String content) {
-            this.postTitle = postTitle;
-            this.postAuthor = postAuthor;
-            this.postPublishDate = postPublishDate;
-            this.rating = rating;
-            this.content = content;
-        }
-
-        public String getPostTitle() {
-            return postTitle;
-        }
-
-        public String getPostAuthor() {
-            return postAuthor;
-        }
-
-        public String getBookPublishDate() {
-            return postPublishDate;
-        }
-
-        public int getRating() {
-            return rating;
-        }
-
-        public String getContent() {
-            return content;
-        }
-
+    public Hashtag(String hashtag) {
+        this.hashtag = hashtag;
     }
+
+    public Long getId() {
+        return id;
+    }
+
+    public String getHashtag() {
+        return hashtag;
+    }
+
+    public Collection<Post> getPosts() {
+        return posts;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Hashtag hashtag = (Hashtag) o;
+        return id == hashtag.id &&
+                Objects.equals(hashtag,hashtag.hashtag);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, hashtag);
+    }
+
+    @Override
+    public String toString() {
+        return "Hashtag{" +
+                "id=" + id +
+                ", hashtag='" + hashtag + '\'' +
+                '}';
+    }
+}
+
+
+
+
 
 

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/navbar.css" />
+    <link rel="stylesheet" href="/hashtag.css" />
+    <link rel="icon" type="image/png" href="/images/favicon.png">
+    <title>Hashtags</title>
+</head>
+<body>
+<div class="container">
+    <header th:replace="fragments/header :: header" class="header">
+    </header>
+
+    <main>
+        <section>
+            <h2>Our Topics</h2>
+            <ul class="headings__list">
+                <a th:each="heading: ${headings}" class="headings__list-item">
+                    <a th:text="${heading.subject}" th:href="@{'/headings/'+${heading.subject}}"</a>
+
+                <a class="headings__link">Adventure</a>
+                <br>
+                <a class="headings__link">Activites & Crafts</a>
+                <br>
+                <a class="headings__link">Parenting</a>
+                <br>
+                <a class="headings__link">Child Development</a>
+                <br>
+                <a class="headings__link">Resource Guide</a>
+                <br>
+
+            </ul>
+<h1 th:text="${hashtagToDisplay.postTitle}">Great at home summer activities for kids</h1>
+<h2 th:text="${hashtagToDisplay.postAuthor}">Paulette Nix</h2>
+<h3>2020</h3>
+<h4>5 out of 5</h4>
+<p>These activity was awesome.</p>
+</body>
+</html>
