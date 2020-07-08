@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.wcci.blog.entities.Author;
+import org.wcci.blog.entities.Hashtag;
 import org.wcci.blog.entities.Post;
 import org.wcci.blog.storage.AuthorStorage;
 import org.wcci.blog.storage.PostStorage;
@@ -18,33 +19,28 @@ import java.util.stream.Collectors;
 @Controller
 public class PostController {
 
-    private PostStorage postStorage;
-    private HashtagStorage hashtagStorage;
-    private AuthorStorage authorStorage;
+    PostStorage postStorage;
 
-    public PostController(PostStorage postStorage, HashtagStorage headingStorage, AuthorStorage authorStorage) {
+    public PostController(PostStorage postStorage) {
         this.postStorage = postStorage;
-        this.hashtagStorage = hashtagStorage;
-        this.authorStorage = authorStorage;
     }
-    @GetMapping("posts/{postTitle}")
-    public String showSinglePost(@PathVariable String postTitle, Model model) {
-        model.addAttribute("postToDisplay", postStorage.findPostByPostTitle(postTitle));
+    @GetMapping("posts/{id}")
+    public String showSinglePost(@PathVariable String id, Model model) {
+        model.addAttribute("postToDisplay", postStorage.findPostById(id));
         return "post-template";
     }
     @PostMapping("posts/add")
-    public String addPost(String title, String publishDate, String category, String headingSubject, long... authorIds) {
-        Heading postHeading = headingStorage.findHeadingBySubject(headingSubject);
+    public String addPost(String title, String publishDate, String category, String body, String hashtag, long... authorIds) {
         Collection<Author> postAuthors = Arrays.stream(authorIds)
-                .mapToObj(id -> authorStorage.findAuthorById(id))
-                .collect(Collectors.toSet());
-        postStorage.save(new Post(title, publishDate, category, postHeading, postAuthors.toArray(Author[]::new)));
-        return "redirect:/headings/" + headingSubject;
+//                .mapToObj(id -> authorStorage.findAuthorById(id))
+//                .collect(Collectors.toSet());
+        postStorage.save(new Post(title, publishDate, category, body, postAuthors.toArray(Author[]::new)));
+        return "redirect:/hashtag/" + hashtag;
     }
 
     @PostMapping("posts/delete")
-    public String deletePost(long postId){
-        postStorage.deletePostById(postId);
+    public String deletePost(long Id){
+        postStorage.deletePostById(Id);
         return "redirect:/";
     }
 }

@@ -9,17 +9,17 @@ import org.wcci.blog.storage.HashtagStorage;
 @Controller
 public class HomeController {
 
-    private final HashtagStorage headingStorage;
+    private final HashtagStorage hashtagStorage;
     private final AuthorStorage authorStorage;
 
-    public HomeController(HashtagStorage headingStorage, AuthorStorage authorStorage) {
-        this.headingStorage = headingStorage;
+    public HomeController(HashtagStorage hashtagStorage, AuthorStorage authorStorage) {
+        this.hashtagStorage = hashtagStorage;
         this.authorStorage = authorStorage;
     }
 
     @RequestMapping({"", "/"})
-    public String routeToHeadings(Model model) {
-        model.addAttribute("headings", headingStorage.findAllHeadings());
+    public String routeToHashtags(Model model) {
+        model.addAttribute("hashtags", hashtagStorage.findAllHashtags());
         model.addAttribute("authors", authorStorage.findAllAuthors());
         return "home-template";
     }

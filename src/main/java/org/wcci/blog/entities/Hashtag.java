@@ -12,22 +12,22 @@ public class Hashtag {
     @Id
     @GeneratedValue
     private Long id;
-    private String hashtag;
+    private String tag;
     @ManyToMany(mappedBy = "hashtags")
     private Collection<Post> posts;
 
     protected Hashtag() {}
 
-    public Hashtag(String hashtag) {
-        this.hashtag = hashtag;
+    public Hashtag(String tag) {
+        this.tag = tag;
     }
 
     public Long getId() {
         return id;
     }
 
-    public String getHashtag() {
-        return hashtag;
+    public String getTag() {
+        return tag;
     }
 
     public Collection<Post> getPosts() {
@@ -40,19 +40,19 @@ public class Hashtag {
         if (o == null || getClass() != o.getClass()) return false;
         Hashtag hashtag = (Hashtag) o;
         return id == hashtag.id &&
-                Objects.equals(hashtag,hashtag.hashtag);
+                Objects.equals(tag,hashtag.tag);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, hashtag);
+        return Objects.hash(id, tag);
     }
 
     @Override
     public String toString() {
         return "Hashtag{" +
                 "id=" + id +
-                ", hashtag='" + hashtag + '\'' +
+                ", tag='" + tag + '\'' +
                 '}';
     }
 }

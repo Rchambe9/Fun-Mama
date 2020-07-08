@@ -10,6 +10,7 @@ import java.util.Optional;
 @Service
 public class AuthorStorage {
     private AuthorRepository authorRepo;
+
     public AuthorStorage (AuthorRepository authorRepo){
         this.authorRepo = authorRepo;
     }
@@ -23,6 +24,9 @@ public class AuthorStorage {
         }
         return retrievedAuthor;
     }
+//    public Author save(Author author){
+//        authorRepo.save(author);}
+//
     public void save(Author authorToSave) {
         authorRepo.save(authorToSave);
     }

@@ -106,6 +106,7 @@ span{
 .nav .nav-items {
     display: flex;
     margin: 0;
+    justify-content: space-between;
 }
 .nav .nav-items .nav-link{
     padding: 1.6rem 1rem;

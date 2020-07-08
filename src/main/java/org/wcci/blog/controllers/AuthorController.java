@@ -10,7 +10,7 @@ import org.wcci.blog.storage.AuthorStorage;
 
 @Controller
 public class AuthorController {
-    private AuthorStorage authorStorage;
+    AuthorStorage authorStorage;
 
     public AuthorController(AuthorStorage authorStorage){
         this.authorStorage = authorStorage;
@@ -22,8 +22,8 @@ public class AuthorController {
         return "author-template";
     }
     @PostMapping("authors/add")
-    public String addAuthor(String firstName, String lastName){
-        Author authorToAdd = new Author(firstName, lastName);
+    public String addAuthor(String name){
+        Author authorToAdd = new Author(name);
         authorStorage.save(authorToAdd);
         return "redirect:/";
     }

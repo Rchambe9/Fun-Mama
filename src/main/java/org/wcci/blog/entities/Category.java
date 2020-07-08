@@ -26,8 +26,8 @@ public class Category {
     }
 
     public String getCategoryName(){return categoryName;}
-    public Collection<Post> getPosts(){ return posts;}
     public long getId(){ return id;  }
+    public Collection<Post> getPosts(){ return posts;}
 
     @Override
     public boolean equals(Object o) {

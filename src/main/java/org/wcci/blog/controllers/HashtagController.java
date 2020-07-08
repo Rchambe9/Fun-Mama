@@ -7,23 +7,22 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.wcci.blog.entities.Hashtag;
 import org.wcci.blog.entities.Post;
+import org.wcci.blog.storage.HashtagStorage;
 import org.wcci.blog.storage.repositories.HashtagRepository;
 
 import java.util.Collection;
 
 @Controller
 public class HashtagController {
-    private HashTagRepository hashTagRepo;
-    private PostStorage postStorage;
+    HashtagStorage hashtagStorage;
 
-    public HashtagController(HashtagRepository hashtagRepo, PostStorage postStorage) {
-        this.hashtagRepo = hashtagRepo;
-        this.postStorage = postStorage;
-    }
 
-    @GetMapping("hashtags/{hashtag}")
-    public String showSingleHashtag(@PathVariable String hashtag, Model model) {
-        model.addAttribute("hashtagToDisplay", hashTagRepo.findByHashtag(hashtag));
+    public HashtagController(HashtagStorage hashtagStorage) {
+        this.hashtagStorage = hashtagStorage;}
+
+    @GetMapping("hashtags/{id}")
+    public String showSingleHashtag(@PathVariable String tag, Model model) {
+        model.addAttribute("hashtagToDisplay", hashtagRepo.findByHashtag(hashtag));
         model.addAttribute("authors", authorStorage.findAllAuthors());
         return "hashtag-template";
     }
