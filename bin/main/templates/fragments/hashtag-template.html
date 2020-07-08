@@ -1,14 +1,56 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Document</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hashtag Template</title>
+    <link rel="stylesheet" href="/css/style.css"/>
+    <link rel="stylesheet" href="/css/layout.css"/>
 </head>
 <body>
-<h1 th:text="${hashtagToDisplay.postTitle}">Great at home summer activities for kids</h1>
-<h2 th:text="${hashtagToDisplay.postAuthor}">Paulette Nix</h2>
-<h3>2020</h3>
-<h4>5 out of 5</h4>
-<p>These activity was awesome.</p>
+<div class="container">
+    <header th:replace="fragments/header :: header" class="header">
+    </header>
+
+    <main>
+        <h2 th:text = "${hashtag.postTitle}" class="hashtag__postTitle">Adventures on a Budget</h2>
+        <p th:text = "${hashtag.posts}" class="hashtag__post">A great article for free activities with kids.</p>
+        <ul class="posts__list">
+            <li th:each="post: ${hashtag.posts}" class="posts__list-item">
+                <a th:text= "${post.postTitle}" th:href="@{'/posts/'+${post.postTtitle}}" class="posts__link">Great at home summer activities for kids</a>
+            </li>
+        </ul>
+        <form action="/hashtag/add" method="POST">
+            <h3>New Hashtag:</h3>
+            <label>
+                Title:
+            </label>
+            <input type="text" name="title" id="">
+            <label>
+                Today's Date:
+            </label>
+            <input type="text" name="publishDate" id="">
+            <label>
+                Category:
+            </label>
+            <input type="text" name="category" id="">
+            <label>
+                Author:
+            </label>
+            <input type="text" name="author" id="">
+            <label>
+                Body:
+            </label>
+            <input type="text" name="body" id="">
+
+            <select name="authorIds" multiple id="">
+                <option th:each="author: ${authors}" th:value="${author.id}" th:text="${author.name}"></option>
+            </select>
+            <input type="hidden" name="hashtag" th:value = "${hashtag.postTitle}" id="">
+            <button type="Click Here">Add A New hashtag</button>
+        </form>
+    </main>
+</div>
 </body>
 </html>
