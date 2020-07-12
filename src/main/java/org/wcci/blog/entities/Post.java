@@ -13,11 +13,10 @@ public class Post {
     private String title;
     private String body;
     private int publishDate;
-    private String category;
     @ManyToOne
-    private Collection<Author> authors;
-//    private Author author;
-    private Collection<Category> categories;
+    private Author author;
+    @ManyToOne
+    private Category category;
     @ManyToMany
     private Collection<Hashtag> hashtags;
 
@@ -25,12 +24,13 @@ public class Post {
     protected Post() {}
 
 // constructor for post class
-    public  Post(String title, int publishDate, String body, Author author, Hashtag hashtag) {
+    public  Post(String title, Category category, int publishDate, String body, Author author, Hashtag hashtag) {
         this.title = title;
         this.body = body;
         this.publishDate = publishDate;
-        this.authors = authors;
+        this.author = author;
         this.hashtags = hashtags;
+        this.category = category;
     }
 
     public long getId() {
@@ -41,13 +41,13 @@ public class Post {
         return title;
     }
 
-    public Collection<Author> getAuthors() {   return authors;  }
+    public Author getAuthor() {   return author;  }
 
     public String getBody() {
         return body;
     }
 
-    public String getCategory() {
+    public Category getCategory() {
         return category;
     }
 

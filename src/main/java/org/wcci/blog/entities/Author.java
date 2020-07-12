@@ -11,15 +11,14 @@ public class Author {
     @GeneratedValue
     private long id;
     private String name;
-    @OneToMany(mappedBy = "authors")
+    @OneToMany(mappedBy = "author")
     private Collection<Post> posts;
 
 
     protected Author() {
     }
 
-    public Author( String authorId, String name) {
-        this.id = id;
+    public Author(String name) {
         this.name = name;
     }
 

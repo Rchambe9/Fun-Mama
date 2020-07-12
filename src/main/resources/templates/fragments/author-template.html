@@ -1,18 +1,15 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
     <title>Document</title>
-    <link rel="stylesheet" href="/css/style.css"/>
-    <link rel="stylesheet" href="/css/layout.css"/>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/style.css" href="../../static/css/style.css">
 </head>
 <body>
-<div class="container">
-    <header th:replace="fragments/header :: header" class="header">
-    </header>
-
+<header>
+    <h1><a th:href="@{'/'}"></a></h1>
     <main>
-        <h2 th:text="${author.firstName} + ' ' + ${author.lastName}" class="author__name">Paulette Nix</h2>
+        <h2 th:text="${author.name}" class="author__name">Paulette Nix</h2>
 
         <ul class="posts__list">
             <li th:each="post: ${author.posts}" class="posts__list-item">

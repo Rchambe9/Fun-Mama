@@ -1,5 +1,8 @@
 @import url("src\main\resources\static\css\fonts.css");
-
+body {
+    background-image: url("images\pencil background.jpg");
+    background-size: 100%;
+}
 html{
     margin: 0%;
     box-sizing: border-box;
@@ -26,26 +29,28 @@ html{
     --Livvic:'Livvic',cursive;
 
 }
-.nav .nav-menu .flex-row{
+.nav .flex-row{
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
 }
-ul{
+.ul{
     list-style-type: none;
 }
 
 h1{
     font-family: var(--Lexend_Deca);
     font-size: 2.5rem;
+    padding-bottom: 0rem;
 }
 h2{
+    padding-top:  0rem;
     font-family: var(--Lexend_Deca);
 
 }
 h3{
     font-family: var(--Abel);
-    font-size: 1.3rem;
+    font-size: 2.0rem;
 }
 button.btn{
     border: none;
@@ -73,13 +78,14 @@ span{
     background-color: white;
     padding: 0 2rem;
     height: 1px;
-    min-height: 310vh;
+    min-height: 20vh;
     overflow: hidden;
     transition: height 1s ease-in-out;
-}
-.nav .nav-menu{
     justify-content: space-between;
+
+
 }
+
 
 .nav .toggle-collapse{
     position: absolute;
@@ -103,7 +109,11 @@ span{
 .collapse{
     height: 30rem;
 }
-.nav .nav-items {
+.ul .headings__list{
+    list-style: none;
+    padding-left: 15px;
+    
+} 
     display: flex;
     margin: 0;
     justify-content: space-between;

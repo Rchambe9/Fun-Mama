@@ -15,14 +15,13 @@ public class AuthorStorage {
         this.authorRepo = authorRepo;
     }
     public Author findAuthorById(Long id) {
-        Optional<Author> authorOptional = authorRepo.findById(id);
         Author retrievedAuthor;
-        if(authorOptional.isEmpty()){
-            throw new ResourceNotFoundException("Author not found.");
-        }else{
-            retrievedAuthor= authorOptional.get();
+        Optional<Author> authorOptional = authorRepo.findById(id);
+        if(authorOptional.isPresent()) {
+            retrievedAuthor = authorOptional.get();
+            return retrievedAuthor;
         }
-        return retrievedAuthor;
+        throw new ResourceNotFoundException("Author not found.");
     }
 //    public Author save(Author author){
 //        authorRepo.save(author);}

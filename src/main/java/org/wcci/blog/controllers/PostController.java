@@ -26,16 +26,17 @@ public class PostController {
     }
     @GetMapping("posts/{id}")
     public String showSinglePost(@PathVariable String id, Model model) {
-        model.addAttribute("postToDisplay", postStorage.findPostById(id));
+//        model.addAttribute("postToDisplay", postStorage.findPostById(id));
         return "post-template";
     }
     @PostMapping("posts/add")
     public String addPost(String title, String publishDate, String category, String body, String hashtag, long... authorIds) {
-        Collection<Author> postAuthors = Arrays.stream(authorIds)
+//        Author postAuthors = Arrays.stream(authorIds)
 //                .mapToObj(id -> authorStorage.findAuthorById(id))
 //                .collect(Collectors.toSet());
-        postStorage.save(new Post(title, publishDate, category, body, postAuthors.toArray(Author[]::new)));
-        return "redirect:/hashtag/" + hashtag;
+//        postStorage.save(new Post(title, publishDate, category, body, postAuthors.toArray(Author[]::new)));
+//        return "redirect:/hashtag/" + hashtag;
+        return null;
     }
 
     @PostMapping("posts/delete")
