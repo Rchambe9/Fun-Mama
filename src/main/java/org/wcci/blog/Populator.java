@@ -3,6 +3,7 @@ package org.wcci.blog.storage;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.wcci.blog.entities.Author;
+import org.wcci.blog.entities.Category;
 import org.wcci.blog.entities.Hashtag;
 import org.wcci.blog.entities.Post;
 import org.wcci.blog.storage.repositories.AuthorRepository;
@@ -22,9 +23,9 @@ public class Populator {
     public void run(String... args) throws Exception {
         Hashtag fun = new Hashtag("Adventure", "Adventure provides opportunity for personal growth, development, " +
                 "learning, and self discovery.");
-        Heading parenting = new Heading("Parenting", " Gain skills for discipline, boundaries & even self-care! ");
-        Heading development = new Heading("Development", "Children learn in a variety of ways.");
-        Heading spotlight = new Heading("Spotlight", "Browse through tons of educational and recreational resources");
+        Category parenting = new Category("Parenting", " Gain skills for discipline, boundaries & even self-care! ");
+        Category development = new Category("Development", "Children learn in a variety of ways.");
+        Category spotlight = new Category("Spotlight", "Browse through tons of educational and recreational resources");
         headingRepo.save(adventure);
         headingRepo.save(parenting);
         headingRepo.save(development);
