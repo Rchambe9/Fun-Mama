@@ -5,24 +5,29 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.wcci.blog.entities.Author;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.wcci.blog.entities.Hashtag;
 import org.wcci.blog.entities.Post;
-import org.wcci.blog.storage.AuthorStorage;
 import org.wcci.blog.storage.PostStorage;
-import org.wcci.blog.storage.HashtagStorage;
+import org.wcci.blog.storage.repositories.HashtagRepository;
 
-import java.util.Arrays;
-import java.util.Collection;
-import java.util.stream.Collectors;
 
 @Controller
 public class PostController {
 
-    PostStorage postStorage;
+    private final PostStorage postStorage;
+    private HashtagRepository hashtagRepo;
 
-    public PostController(PostStorage postStorage) {
+    public PostController(PostStorage postStorage, HashtagRepository hashtagRepo) {
         this.postStorage = postStorage;
+        this.hashtagRepo = hashtagRepo;
+    }
+    @RequestMapping("/posts/{id}")
+    public String displayPost(@PathVariable Long id, Model model){
+        Post retrievePost = postStorage.findPostById(id);
+        model.addAttribute("post", retrievePost);
+        return post-view;
     }
     @GetMapping("posts/{id}")
     public String showSinglePost(@PathVariable String id, Model model) {

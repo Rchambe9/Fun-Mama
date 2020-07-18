@@ -4,6 +4,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Objects;
 
@@ -19,6 +20,7 @@ public class Hashtag {
     protected Hashtag() {}
 
     public Hashtag(String tag) {
+        posts = new ArrayList<>();
         this.tag = tag;
     }
 
@@ -30,9 +32,6 @@ public class Hashtag {
         return tag;
     }
 
-    public Collection<Post> getPosts() {
-        return posts;
-    }
 
     @Override
     public boolean equals(Object o) {
@@ -40,21 +39,15 @@ public class Hashtag {
         if (o == null || getClass() != o.getClass()) return false;
         Hashtag hashtag = (Hashtag) o;
         return id == hashtag.id &&
-                Objects.equals(tag,hashtag.tag);
+                Objects.equals(hashtag, hashtag.tag);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, tag);
+        return Objects.hash(tag);
     }
 
-    @Override
-    public String toString() {
-        return "Hashtag{" +
-                "id=" + id +
-                ", tag='" + tag + '\'' +
-                '}';
-    }
+
 }
 
 

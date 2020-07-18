@@ -23,9 +23,7 @@ public class AuthorStorage {
         }
         throw new ResourceNotFoundException("Author not found.");
     }
-//    public Author save(Author author){
-//        authorRepo.save(author);}
-//
+
     public void save(Author authorToSave) {
         authorRepo.save(authorToSave);
     }

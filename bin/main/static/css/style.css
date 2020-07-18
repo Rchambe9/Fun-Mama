@@ -1,17 +1,12 @@
 @import url("src\main\resources\static\css\fonts.css");
-body {
-    background-image: url("images\pencil background.jpg");
-    background-size: 100%;
-}
-html{
+
+html,body {
+
     margin: 0%;
     box-sizing: border-box;
     overflow: hidden;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 16px;
-    background-color: var(--primary-color);
-    color: var(--text-gray);
 }
+
 :root{
 
     /*theme colors*/
@@ -20,23 +15,56 @@ html{
     --bg-color:#0f0f0f;
     --white:#ffffff;
     --midnight:#104f55;
-    --sky:linear-gradient(120deg, #a1c4fd 0%, #c2efb 100%);
 
     --Abel:'Abel',cursive;
     --Anton:'Anton',cursive;
     --Josefin_Sans:'Josefin_Sans',cursive;
     --Lexend_Deca:'Lexend_Deca',cursive;
     --Livvic:'Livvic',cursive;
+    --sky:linear-gradient(120deg, #a1c4fd 0%, #c2efb 100%);
 
+}
+.div .nav-menu-flex-row{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
 }
 .nav .flex-row{
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
 }
-.ul{
+.ul .nav-items{
     list-style-type: none;
+
 }
+.nav .nav-items{
+    display: flex;
+    margin: 0;
+    text-align: center;
+}
+.nav .nav-items .nav-link:hover{
+    background-color: var(--midnight);
+}
+
+.nav .nav-items .nav-link:hover a{
+    color: var(--white);
+}
+.nav{
+    background-color: white;
+    padding: 0 2rem;
+    height: 1px;
+    min-height: 310vh;
+    overflow: hidden;
+    transition: height 1s ease-in-out;
+}
+.nav .nav-menu{
+    justify-content: space-between;
+a {
+    text-decoration: none;
+    color: var(--text-gray);
+}
+
 
 h1{
     font-family: var(--Lexend_Deca);
@@ -66,6 +94,9 @@ span{
 .container{
     margin: 0 5vw;
 }
+post.detail.text{
+    position: absolute;
+}
 
 
 
@@ -82,6 +113,7 @@ span{
     overflow: hidden;
     transition: height 1s ease-in-out;
     justify-content: space-between;
+    padding-left: 50px;
 
 
 }

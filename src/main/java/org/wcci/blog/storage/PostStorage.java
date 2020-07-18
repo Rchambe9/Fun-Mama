@@ -11,11 +11,8 @@ public class PostStorage {
 
     public PostStorage(PostRepository postRepo)  { this.postRepo = postRepo; }
 
-    public Post findPostByTitle(String postTitle) {
-        return postRepo.findByTitle(postTitle);
-    }
 
-    public Iterable<Post> findAllBooks() {
+    public Iterable<Post> findAllPosts() {
         return postRepo.findAll();
     }
 
@@ -23,8 +20,12 @@ public class PostStorage {
         postRepo.save(post);
     }
 
-    public void deletePostById(long postId) {
-        postRepo.deleteById(postId);
+    public void deletePostById(long id) {
+        postRepo.deleteById(id);
+    }
+
+    public Post findPostById(Long id) {
+        return findPostById(id);
     }
 }
 

@@ -39,22 +39,22 @@
         </nav>
     </div>
 <div class="container">
-    <header th:replace="fragments/header :: header" class="header">
+    <header th:replace="'/fragments/header' :: header" class="header">
     </header>
     <main>
-        <section class="post">
-            <h2 th:text="${postToDisplay.title}" class="post__title">Great at home summer activities for kids</h2>
-            <h3 th:each="author :${postToDisplay.authors}" th:text="${author.firstName} + ' '+ ${author.lastName}"
-                class="post__author">Paulette Nix</h3>
-            <p th:text="${postToDisplay.publishDate}" class="post__publishDate">Date Published: February 19, 2020</p>
-            <p th:text="${postToDisplay.category}" class="post__category">
-                This is a great article about creating adventure and experiences for children on a budget.
-            </p>
-            <form action="/posts/delete" method="POST">
-                <input type="hidden" name="postId" th:value = "${postToDisplay.id}">
-                <button type="submit">Add a Hashtag To This Post</button>
-            </form>
-        </section>
+<!--        <section class="post">-->
+<!--            <h2 th:text="${postToDisplay.title}" class="post__title">Great at home summer activities for kids</h2>-->
+<!--            <h3 th:each="author :${postToDisplay.authors}" th:text="${author.firstName} + ' '+ ${author.lastName}"-->
+<!--                class="post__author">Paulette Nix</h3>-->
+<!--            <p th:text="${postToDisplay.publishDate}" class="post__publishDate">Date Published: February 19, 2020</p>-->
+<!--            <p th:text="${postToDisplay.category}" class="post__category">-->
+<!--                This is a great article about creating adventure and experiences for children on a budget.-->
+<!--            </p>-->
+<!--            <form action="/posts/delete" method="POST">-->
+<!--                <input type="hidden" name="postId" th:value = "${postToDisplay.id}">-->
+<!--                <button type="submit">Add a Hashtag To This Post</button>-->
+<!--            </form>-->
+<!--        </section>-->
     </main>
 </div>
 

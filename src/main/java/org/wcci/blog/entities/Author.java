@@ -10,7 +10,8 @@ public class Author {
     @Id
     @GeneratedValue
     private long id;
-    private String name;
+    private String firstName;
+    private String lastName;
     @OneToMany(mappedBy = "author")
     private Collection<Post> posts;
 
@@ -18,17 +19,17 @@ public class Author {
     protected Author() {
     }
 
-    public Author(String name) {
-        this.name = name;
-    }
+    public Author(String firstName, String lastName) {
 
-    public String getName() {
-        return name;
+        this.firstName = firstName;
+        this.lastName = lastName;
     }
 
     public Long getId() {
         return id;
     }
+    public String getFirstName(){ return firstName;}
+    public String getLastName(){ return lastName;}
 
     public Collection<Post> getPosts() {
         return posts;
@@ -39,20 +40,22 @@ public class Author {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Author author = (Author) o;
-        return Objects.equals(id, author.id) &&
-                Objects.equals(name, author.name);
+        return id == author.id &&
+                Objects.equals(firstName, author.firstName) &&
+                Objects.equals(lastName, author.lastName);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name);
+        return Objects.hash(id, firstName, lastName);
     }
 
     @Override
     public String toString() {
         return "Author{" +
                 "id=" + id +
-                ", name='" + name + '\'' +
+                ", firstName='" + firstName + '\'' +
+                ", lastName=" + lastName + '\'' +
                 '}';
     }
 }
