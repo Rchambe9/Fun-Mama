@@ -9,25 +9,36 @@ public class PostStorage {
 
     PostRepository postRepo;
 
-    public PostStorage(PostRepository postRepo)  { this.postRepo = postRepo; }
-
-
-    public Iterable<Post> findAllPosts() {
-        return postRepo.findAll();
-    }
-
-    public void save(Post post) {
-        postRepo.save(post);
-    }
-
-    public void deletePostById(long id) {
-        postRepo.deleteById(id);
+    public PostStorage(PostRepository postRepo) {
+        this.postRepo = postRepo;
     }
 
     public Post findPostById(Long id) {
         return findPostById(id);
     }
+
 }
+//    public Iterable<Post> findPostById(Long id) {
+//        return postRepo.findByPostId(id);
+//    }
+//
+//    @Override
+//    public void add(Post postToAdd) {
+//        postRepo.save(postToAdd);
+//    }
+
+//    public Iterable<Post> findAllPosts{
+//        return postRepo.findAll();
 
 
+//    public Post findPostById(Long id) {
+//    }
 
+//    public void save(Post postToAddHashtagTo) {
+
+
+//    @Override
+//    public void deleteById(long id) {
+//        postRepo.deleteById(id);
+//    }
+//

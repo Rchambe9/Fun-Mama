@@ -18,12 +18,10 @@ public class Category {
     private Collection<Post> posts;
 
 
-    protected Category(){}
-
-    public Category(String categoryName, String description) {
+    public Category(String categoryName) {
        this.categoryName = categoryName;
-
     }
+    protected Category(){}
 
     public String getCategoryName(){return categoryName;}
     public long getId(){ return id;  }

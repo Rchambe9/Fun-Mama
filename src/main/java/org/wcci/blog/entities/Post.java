@@ -21,7 +21,7 @@ public class Post {
     private Collection<Hashtag> hashtags;
 
 // constructor for post class
-    public Post(String title, String publishDate, String body, Category category, Author author, Hashtag... hashtags) {
+    public Post(String title, Author author, String publishDate, String body, Category category, Hashtag... hashtags) {
         this.title = title;
         this.body = body;
         this.publishDate = LocalDate.parse(publishDate);
@@ -31,6 +31,9 @@ public class Post {
 
     }
     protected Post() {}
+
+    public Post(String title, String author, String publishDate, String body, String activitiesAndCrafts) {
+    }
 
     public long getId() { return id; }
 
@@ -60,6 +63,7 @@ public class Post {
         return "Post{" +
                 "id=" + id +
                 ", title='" + title + '\'' +
+                ", author='" + author + '\'' +
                 ", publishDate='" + publishDate + '\'' +
                 ", body='" + body + '\'' +
                 ", category=" + category +
@@ -84,6 +88,9 @@ public class Post {
         return Objects.hash(id, title, publishDate, body, category);
 
     }
+
+
+
 
 
 }

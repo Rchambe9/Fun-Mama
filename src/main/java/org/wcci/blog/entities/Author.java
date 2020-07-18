@@ -16,7 +16,7 @@ public class Author {
     private Collection<Post> posts;
 
 
-    protected Author() {
+    public Author() {
     }
 
     public Author(String firstName, String lastName) {

@@ -29,8 +29,8 @@ public class AuthorController {
         return "author-template";
     }
     @PostMapping("/author/add")
-    public String addAuthor(String name){
-        Author authorToAdd = new Author(name);
+    public String addAuthor(String firstName, String lastName){
+        Author authorToAdd = new Author(firstName, lastName);
         authorStorage.save(authorToAdd);
         return "redirect:/";
     }

@@ -14,6 +14,7 @@ public class AuthorStorage {
     public AuthorStorage (AuthorRepository authorRepo){
         this.authorRepo = authorRepo;
     }
+
     public Author findAuthorById(Long id) {
         Author retrievedAuthor;
         Optional<Author> authorOptional = authorRepo.findById(id);

@@ -1,51 +1,36 @@
 package org.wcci.blog.entities;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.ManyToMany;
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Objects;
 
-@Entity
+
 public class Hashtag {
-    @Id
-    @GeneratedValue
-    private Long id;
-    private String tag;
-    @ManyToMany(mappedBy = "hashtags")
-    private Collection<Post> posts;
+    private String postTitle;
+    private String postAuthor;
+    private String postPublishDate;
+    private int rating;
+    private String comment;
 
     protected Hashtag() {}
 
-    public Hashtag(String tag) {
-        posts = new ArrayList<>();
-        this.tag = tag;
+    public Hashtag(String postTitle, String postAuthor, String postPublishDate, int rating, String comment ) {
+        this.postTitle = postTitle;
+        this.postAuthor = postAuthor;
+        this.postPublishDate = postPublishDate;
+        this.rating = rating;
+        this.comment = comment;
     }
 
-    public Long getId() {
-        return id;
+    public String getPostTitle() { return postTitle; }
+
+    public String getPostAuthor() {
+        return postAuthor;
     }
 
-    public String getTag() {
-        return tag;
-    }
+    public String getPostPublishDate() { return postPublishDate; }
 
+    public int getRating() { return rating;}
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Hashtag hashtag = (Hashtag) o;
-        return id == hashtag.id &&
-                Objects.equals(hashtag, hashtag.tag);
-    }
+    public String getComment(){ return comment; }
 
-    @Override
-    public int hashCode() {
-        return Objects.hash(tag);
-    }
 
 
 }
