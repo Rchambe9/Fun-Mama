@@ -12,6 +12,7 @@ public class Post {
     private long id;
     private String body;
     private LocalDate publishDate;
+    private String summary;
     @ManyToOne
     private Author author;
     @ManyToOne
