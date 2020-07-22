@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <h1 style="text-align: center;">Fun Grandma</h1>
+    <h2 style="text-align: center;"> Activities 4 Kids</h2>
+    <title>Activities & Crafts</title>
+</head>
+<body>
+    <div class="home__nav">
+    <ul class="category__list">
+        <li class="category__section">
+            <a href="homepage.html" class="category__link">Home</a>
+        </li>
+        <li class="category__section">
+             <a href="ActivitiesAndCrafts.html" class="category__link">Activities & Crafts</a>
+        </li>
+        <li class="category__section">
+            <a href="childevelopment.html" class="category__link">Child Development</a>
+        </li>
+        <li class="category__section">
+            <a href="resourceguide.html" class="category__link">Resource Guide</a>
+        </li>
+    </ul>
+</div>
+<body>
+<div class="container">
+    <!-- <header th:replace="fragments/header :: header" class="header">
+    </header> -->
+    <main>
+        <section class="post">
+            <p th:text="${postToDisplay.category}" class="post__category">Activities & Crafts</p>
+
+            <h2 th:text="${postToDisplay.title}" class="post__title">Great at home summer activities for kids</h2>
+            <h3 th:each="author :${postToDisplay.authors}" th:text="${author.firstName} + ' '+ ${author.lastName}"
+            class="post__author">Paulette Nix</h3>
+            <p th:text="${postToDisplay.publishDate}" class="post__publishDate">Date Published: Feb 2,2020</p>
+            <p th:text="${postToDisplay.summary}" class="post__summary">
+                Great at home summer activities for kids is full of fun ideas.
+            </p>
+            <div th:each="hashtag : ${post.hashtags}" th:text = "${hashtag.name}"></div>
+
+<form th:action="'/post/' + ${post.id} + '/add-hashtag'" method="POST">
+    <input name = "hashtagTag" type="text">
+    <button type="submit">Add Hashtag</button>
+</form>
+            <a class="nav__home" href="posts-template.html">back to all posts</a>
+            
+        </section>
+    </main>
+</div>
+
+</body>
+</html>

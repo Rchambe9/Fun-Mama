@@ -5,19 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="src\main\resources\static\css\ResourceStyleSheet.css">
-    <h1 style="text-align: center;">Fun Grandma : Activities & Crafts</h1>
+    <h1 style="text-align: center;">Activities & Crafts</h1>
     <title>Activities & Crafts</title>
     <style>
 .container {
   position: relative;
   text-align: center;
-  font-size: 40px;
+  font-size: 10px;
   font-weight: 200;
   color: purple;
 }
 p{
     text-align: left;
     color: black;
+/* }
+.ul.category__list{
+  vertical-align: middle; */
 }
 .centered {
   position: absolute;
@@ -45,6 +48,10 @@ p{
     <p>this is where the post information will go</p>
     <img src="images\arts.jpg" alt="crafts" style="width:100%;">
     <div class="centered">Playing with Numbers</div>
+    <form action="/posts/add" method="POST">
+      <input type="hidden" name="postId" th:value = "${postToDisplay.id}">
+      <button type="submit">Add a Hashtag To This Post</button>
+  </form>
 </div>
 <p>this is where the post information will go</p>
   <div class="container">

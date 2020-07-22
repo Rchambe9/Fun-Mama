@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        * {
+          box-sizing: border-box;
+        }
+        
+        /* Add a gray background color with some padding */
+        body {
+          font-family: Arial;
+          padding: 20px;
+          background: #f1f1f1;
+        }
+        
+        /* Header/Blog Title */
+        .header {
+          padding: 30px;
+          font-size: 40px;
+          text-align: center;
+          background: white;
+        }
+        
+        /* Create two unequal columns that floats next to each other */
+        /* Left column */
+        .leftcolumn {   
+          float: left;
+          width: 75%;
+        }
+        
+        /* Right column */
+        .rightcolumn {
+          float: left;
+          width: 25%;
+          padding-left: 20px;
+        }
+        
+        /* Fake image */
+        .img {
+          /* background-color: #aaa; */
+          width: 100%;
+          padding: 20px;
+        }
+        
+        /* Add a card effect for articles */
+        .card {
+           background-color: white;
+           padding: 20px;
+           margin-top: 20px;
+        }
+        
+        /* Clear floats after the columns */
+        .row:after {
+          content: "";
+          display: table;
+          clear: both;
+        }
+        
+        /* Footer */
+        .footer {
+          padding: 20px;
+          text-align: center;
+          background: #ddd;
+          margin-top: 20px;
+        }
+        
+        /* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other */
+        @media screen and (max-width: 800px) {
+          .leftcolumn, .rightcolumn {   
+            width: 100%;
+            padding: 0;
+          }
+        }
+        </style>
+    <title>Fun Grandma | Activities 4 Kids</title>
+</head>
+<body>
+    <div class="header">
+        <h2>Fun Grandma</h2>
+        <h5>Activities 4 Kids</h5>
+      </div>
+      <div class="row">
+        <div class="leftcolumn">
+          <div class="card">
+            <h2>Rock,Paper,Numbers</h2>
+            <h5>Author | Jan 14, 2020</h5>
+      <img src="images\download (1).jpg" alt="art" style="width:80%;"></img>
+      <p>Rock paper scissors is a game we all played as kids, but now you can play this game with your little boy or girl to teach numbers and counting.</p>
+        <b>What you do:</b><br>
+        The game is played like rock, paper, scissors, only instead of rock-paper-or scissors with your two fingers, you can show a number.<br>
+        On the count of three, you and your child can put up as many fingers as you want.<br>
+        Then ask the kid to count the number of fingers you are showing and how many they have.
+        <br>What kids learn: Counting
+        <h6>Category: Child Development</h6>
+        </div>
+        <div class="card">
+            <h2>Color/Paint By Number</h2>
+            <h5>Author | April 22, 2020</h5>
+            <img src="images\paint by number.jpg" alt="coloring" style="width:80%;"></img>
+            <p>As a child, I remember playing connect the dots. What's great to know now is you can use this same game to teach number sequence.</p>
+            <p><b>Here's how:</b><br>Print out a few paint-by-number templates, grab some crayons or paint to use for coloring.</p><br>
+            pick an easy model, an image with fewer but larger sections that a child can paint easily.
+            Sit with the child and tell him what he needs to do. Show him by coloring a numbered part of the template.
+            Ask the child to pick a number next and check for the corresponding color on the sheet.
+            Color the template fully.<br>
+            <b>What they will learn:</b> Number recognition and one-to-one correspondence
+
+            <h6>Category: Child Development</h6>
+          </div>
+          <div class="card">
+            <h2>Color By Number</h2>
+            <h5>Author | April 22, 2020</h5>
+            <img src="images\paint by number.jpg" alt="art" style="width:80%;"></img>
+            <p>As a child, I remember playing connect the dots. What's great to know now is </p>
+            <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
+            <h6>Category: Child Development</h6>
+          </div>
+</body>
+</html>
