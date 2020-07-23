@@ -14,6 +14,7 @@ public class Category {
     @GeneratedValue
     private long id;
     private String categoryName;
+
     @OneToMany(mappedBy = "category")
     private Collection<Post> posts;
 

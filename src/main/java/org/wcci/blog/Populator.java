@@ -43,14 +43,14 @@ public class Populator implements CommandLineRunner {
 //        authorRepo.save(author6);
 
 
-        Post post1 = new Post("Fun learning activities for kids", "author3", "Feb 20, 2020", "this is where the content goes", "Activities & Crafts");
-        Post post2 = new Post("Backyard Fun", "author1", "April 2, 2020", "", "Child Development");
-        Post post3 = new Post("Mindful activities for learning", "author2", "December 26, 2019", "", "Child Development");
-        Post post4 = new Post("Best Places to Go For Birthdays", "author3", "April 20, 2020", "", "Resource Guide");
-        Post post5 = new Post("Great at home summer activities for kids", "author3", "February 19, 2020", "", "Activities & Crafts");
-        Post post6 = new Post("How to host the ultimate kid's birthday party", "author1", "January 15, 2020", "", "Child Development");
-        Post post7 = new Post("Mindful activities for learning", "author2", "March 27, 2020", "", "Resource Guide");
-//        Post post8 = new Post("How to host the ultimate kid's birthday party", "author5", "January 27, 2020", "Great ideas for a child's party.");
+        Post post1 = new Post("Rock, Paper, Numbers", "author2", "March 27, 2020", "", "Child Development");
+        Post post2 = new Post("Color/Paint By Number", "author1", "April 2, 2020", "", "Child Development");
+        Post post3 = new Post("Mindful activities for learning", "author2", "April 20, 2020", "", "Child Development");
+        Post post4 = new Post("Painted Rainbow Rock Pets", "author1", "May 5, 2020", "", "Activities & Crafts");
+//        Post post5 = new Post("Great at home summer activities for kids", "author3", "February 19, 2020", "", "Activities & Crafts");
+//        Post post6 = new Post("How to host the ultimate kid's birthday party", "author1", "January 15, 2020", "", "Child Development");
+//        Post post7 = new Post("Mindful activities for learning", "author2", "March 27, 2020", "", "Resource Guide");
+////        Post post8 = new Post("How to host the ultimate kid's birthday party", "author5", "January 27, 2020", "Great ideas for a child's party.");
 //        Post post9 = new Post("Make your child fall in love with reading", "author6", "May 26, 2020", "Great ideas for a child's party.");
 //        Post post10 = new Post("How to host the ultimate kid's birthday party", "author4", "January 28, 2020", "Great ideas for a child's party.");
 //        Post post11 = new Post("How to host the ultimate kid's birthday party", "author5", "June 13, 2020", "Great ideas for a child's party.");
