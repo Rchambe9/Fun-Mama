@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/style.css"/>
+    <link rel="stylesheet" href="/css/layout.css"/>
+</head>
+<body>
+<div class="container">
+
+    <main>
+        <h2 th:text="${author.firstName} + ' ' + ${author.lastName}" class="author__name">Paulette Nix</h2>
+
+        <ul class="posts__list">
+            <li th:each="post: ${author.posts}" class="posts__list-item">
+                <a th:text="${post.title}" th:href="@{'/posts/'+${post.title}}" class="books__link">Head First Java</a>
+            </li>
+        </ul>
+    </main>
+</div>
+</body>
+</html>

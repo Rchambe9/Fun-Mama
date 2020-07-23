@@ -7,7 +7,75 @@
     <h1 style="text-align: center;">Child Development</h1>
     <title>Child Development</title>
     <style>
-.container1 {
+      * {
+          box-sizing: border-box;
+        }
+        
+        /* Add a gray background color with some padding */
+        body {
+          font-family: Arial;
+          padding: 20px;
+          background: #f1f1f1;
+        }
+        
+        /* Header/Blog Title */
+        .header {
+          padding: 30px;
+          font-size: 40px;
+          text-align: center;
+          background: white;
+        }
+        
+        /* Create two unequal columns that floats next to each other */
+        /* Left column */
+        .leftcolumn {   
+          float: left;
+          width: 75%;
+        }
+        
+        /* Right column */
+        .rightcolumn {
+          float: left;
+          width: 25%;
+          padding-left: 20px;
+        }
+    
+        .img {
+          /* background-color: #aaa; */
+          width: 100%;
+          padding: 20px;
+        }
+        
+        /* Add a card effect for articles */
+        .card {
+           background-color: white;
+           padding: 20px;
+           margin-top: 20px;
+        }
+        
+        /* Clear floats after the columns */
+        .row:after {
+          content: "";
+          display: table;
+          clear: both;
+        }
+        
+        /* Footer */
+        .footer {
+          padding: 20px;
+          text-align: center;
+          background: #ddd;
+          margin-top: 20px;
+        }
+        
+        /* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other */
+        @media screen and (max-width: 800px) {
+          .leftcolumn, .rightcolumn {   
+            width: 100%;
+            padding: 0;
+          }
+        }
+/* .container1 {
   position: relative;
   text-align: left;
   font-size: 20px;
@@ -23,7 +91,7 @@ p{
   /* position: relative; */
   top: 8px;
   left: 16px;
-}
+} */
 
   </style>
 </head>
@@ -31,7 +99,7 @@ p{
 <div class="home__nav">
     <ul class="category__list">
         <li class="category__section">
-            <a href="homepage.html" class="category__link">Home</a>
+            <a href="homeindex.html" class="category__link">Home</a>
         </li>
         <li class="category__section">
              <a href="activitiescrafts.html" class="category__link">Activities & Crafts</a>
@@ -41,24 +109,50 @@ p{
         </li>
     </ul>
 </div>
-<section>
-  <div class="container1">
-    <img src="images\download (1).jpg" alt="number games" style="width:50%;">
-    <div class="bottom-left">Rock Paper Numbers</div>
-  </div>
-    <p>this is where the post information will go</p>
-  <div class="container">
-    <img src="images\pencils.jpg" alt="art" style="width:100%;">
-    
-    <div class="centered">Arts With A Heart</div>
-  </div>
-  <div class="container">
-    <img src="images\kidsholdinghands.png" alt="outdoor" style="width:100%;">
-    
-    <div class="centered">15 Crafts with A Purpose</div>
-  </div>
-  <footer>
-      <h6>Back Home</h6>
-  </footer>
+<div class="row">
+  <div class="leftcolumn">
+      <div class="card">
+          <h2 a th:text="${post.title}" th:href="@{'/posts/'+${post.title}}" class="posts__link">Rock, Paper, Numbers</a></h2>
+          <h3 th:text="${author.firstName} + ' ' + ${author.lastName}" class="author__name">Paulette Nix </h3>
+          <p th:text="${postToDisplay.publishDate}" class="post__publishDate">Date Published: Jan 18,2020</p>
+          <img src="images\download (1).jpg" alt="art" style="width:80%;"></img>
+          <p>Rock paper scissors is a game we all played as kids, but now you can play this game with your own kids to teach numbers and counting.</p>
+            <b>What you do:</b><br>
+            The game is played like rock, paper, scissors, only instead of rock-paper-or scissors with your two fingers, you can show a number.<br>
+            On the count of three, you and your child can put up as many fingers as you want.<br>
+            Then ask the kid to count the number of fingers you are showing and how many they have.
+            <br><br><b>What kids learn:</b> Counting
+            <h6>Did you try this game? Let us know!</h6>
+            <form action="/posts/add" method="POST">
+              <input type="hidden" name="postId" th:value = "${postToDisplay.id}">
+              <button type="submit">Add a Hashtag!</button>
+          </form>
+      </div>
+
+      <div class="card">
+        <h2 a th:text="${post.title}" th:href="@{'/posts/'+${post.title}}" class="posts__link">Color/Paint By Number</a></h2>
+        <h3 th:text="${author.firstName} + ' ' + ${author.lastName}" class="author__name">David Williams</h3>
+        <p th:text="${postToDisplay.publishDate}" class="post__publishDate">Date Published: March 27,2020</p>
+          <img src="images\paint by number.jpg" alt="coloring" style="width:80%;"></img>
+          <p>As a child, I remember playing connect the dots. What's great to know now is you can use this same game to teach number sequence.</p>
+          <p><b>Here's how:</b><br>Print out a few paint-by-number templates, grab some crayons or paint to use for coloring.</p><br>
+          pick an easy model, an image with fewer but larger sections that a child can paint easily.
+          Sit with the child and tell him what he needs to do. Show him by coloring a numbered part of the template.
+          Ask the child to pick a number next and check for the corresponding color on the sheet.
+          Color the template fully.<br><br>
+          <b>What they will learn:</b> Number recognition and one-to-one correspondence
+          <h6>Did you like this game? Leave a hashtag!</h6>
+          <form action="/posts/add" method="POST">
+            <input type="hidden" name="postId" th:value = "${postToDisplay.id}">
+            <button type="submit">Add a Hashtag!</button>
+        </form>            
+      </div>
+      <a href="homeindex.html" target="_blank">Back to All Posts</a>
+
+  
+  
+      <footer>
+        <h2>&copyFun Grandma 2020</h2>
+      </footer>  
 </body>
 </html>

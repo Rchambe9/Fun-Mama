@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="src\main\resources\static\css\ResourceStyleSheet.css">
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <h1 style="text-align: center;">Fun Grandma : Resource Guide</h1>
    
     <title>Resources Guide</title>
@@ -16,19 +16,50 @@ h2, h3{
 body{
     background-color: wheat; 
 }
+.fa {
+  padding: 20px;
+  font-size: 30px;
+  width: 50px;
+  text-align: center;
+  text-decoration: none;
+  margin: 5px 2px;
+}
+
+.fa:hover {
+    opacity: 0.7;
+}
+
+.fa-facebook {
+  background: #3B5998;
+  color: white;
+}
+
+.fa-twitter {
+  background: #55ACEE;
+  color: white;
+}
+
+.fa-pinterest {
+  background: #cb2027;
+  color: white;
+}
+.fa-instagram {
+  background: #125688;
+  color: white;
+}
 </style>
 </head>
 <body>
 <div class="home-nav">
     <ul class="category__list">
         <li class="category__section">
-            <a href="homepage.html" class="category__link">Home</a>
+            <a href="homeindex.html" class="category__link">Home</a>
         </li>
         <li class="category__section">
              <a href="activitiescrafts.html" class="category__link">Activities & Crafts</a>
         </li>
         <li class="category__section">
-            <a href="childdevelopment.html" class="category__link">Child Development</a>
+            <a href="childevelopment.html" class="category__link">Child Development</a>
         </li>
     </ul>
 </div>
@@ -42,7 +73,7 @@ body{
     <br>
     <a href="https://www.gpkcolumbus.com/">Grand Prix Karting Indoor Entertainment</a>
     <br>
-    <a href="url">link text</a>
+    <!-- <a href="url">link text</a>
     <br>
     <a href="url">link text</a>
     <br>
@@ -52,7 +83,15 @@ body{
     <br>
     <a href="url">link text</a>
     <br>
-    <a href="url">link text</a>
+    <a href="url">link text</a> -->
 </div>
+<div class="card">
+    <h3>Follow Us</h3>
+      <a href="#"><i class="fa fa-facebook"></i></a>
+      <a href="#"><i class="fa fa-instagram"></i></a>
+      <a href="#"><i class="fa fa-twitter"></i></a>
+      <a href="#"><i class="fa fa-pinterest"></i></a>
+  </div>
+  </div>
 </body>
 </html>

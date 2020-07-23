@@ -35,7 +35,7 @@
 
             <h2 th:text="${postToDisplay.title}" class="post__title">Great at home summer activities for kids</h2>
             <h3 th:each="author :${postToDisplay.authors}" th:text="${author.firstName} + ' '+ ${author.lastName}"
-            class="post__author">Paulette Nix</h3>
+            class="post__author"></h3>
             <p th:text="${postToDisplay.publishDate}" class="post__publishDate">Date Published: Feb 2,2020</p>
             <p th:text="${postToDisplay.summary}" class="post__summary">
                 Great at home summer activities for kids is full of fun ideas.
