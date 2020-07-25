@@ -43,10 +43,10 @@ public class Populator implements CommandLineRunner {
 //        authorRepo.save(author6);
 
 
-        Post post1 = new Post("Rock, Paper, Numbers", "author2", "March 27, 2020", "", "Child Development");
-        Post post2 = new Post("Color/Paint By Number", "author1", "April 2, 2020", "", "Child Development");
-        Post post3 = new Post("Mindful activities for learning", "author2", "April 20, 2020", "", "Child Development");
-        Post post4 = new Post("Painted Rainbow Rock Pets", "author1", "May 5, 2020", "", "Activities & Crafts");
+        Post post1 = new Post("Rock, Paper, Numbers", author2, "2020-03-27", "summary");
+        Post post2 = new Post("Color/Paint By Number", author1, "2020-04-02", "summary");
+        Post post3 = new Post("Mindful activities for learning", author2, "2020-04-20", "summary");
+        Post post4 = new Post("Painted Rainbow Rock Pets", author1, "2020-05-05", "summary");
 //        Post post5 = new Post("Great at home summer activities for kids", "author3", "February 19, 2020", "", "Activities & Crafts");
 //        Post post6 = new Post("How to host the ultimate kid's birthday party", "author1", "January 15, 2020", "", "Child Development");
 //        Post post7 = new Post("Mindful activities for learning", "author2", "March 27, 2020", "", "Resource Guide");
@@ -59,9 +59,7 @@ public class Populator implements CommandLineRunner {
         postRepo.save(post2);
         postRepo.save(post3);
         postRepo.save(post4);
-        postRepo.save(post5);
-        postRepo.save(post6);
-        postRepo.save(post7);
+
 //        postRepo.save(post8);
 //        postRepo.save(post9);
 //        postRepo.save(post10);

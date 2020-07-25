@@ -34,7 +34,12 @@ public class Post {
     }
     protected Post() {}
 
-    public Post(String title, String author, String publishDate, String summary, String category) {
+    public Post(String title, Author author, String publishDate, String summary) {
+        this.title = title;
+        this.author = author;
+        this.publishDate = LocalDate.parse(publishDate);
+        this.author = author;
+        this.summary = summary;
     }
 
     public long getId() { return id; }

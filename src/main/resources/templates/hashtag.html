@@ -5,25 +5,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Hashtag Template</title>
-    <link rel="stylesheet" href="/css/style.css"/>
-    <link rel="stylesheet" href="/css/layout.css"/>
+    <link rel="stylesheet" href="/static/css/style.css"/>
+    <link rel="stylesheet" href="/static/css/layout.css"/>
 </head>
 <body>
 <div class="container">
-    <header th:replace="fragments/header :: header" class="header">
-    </header>
 
     <main>
-        <nav class="header__nav">
-            <ul class="header__nav-list">
-                <li class="header__nav-list-item">
-                    <a href="campuses.html" class="header__nav-link">Home</a>
-                </li>
-                <li class="header__nav-list-item">
-                    <a href="" class="header__nav-link">#HashTags</a>
-                </li>
-            </ul>
-        </nav>
+       
         <h2 th:text = "${hashtag.postTitle}" class="hashtag__postTitle">Adventures on a Budget</h2>
         <p th:text = "${hashtag.posts}" class="hashtag__post">A great article for free activities with kids.</p>
         <ul class="posts__list">

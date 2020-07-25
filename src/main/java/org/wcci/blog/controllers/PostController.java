@@ -33,18 +33,18 @@ public class PostController {
         this.hashtagRepo = hashtagRepo;
     }
 
-    @RequestMapping("/posts/{id}")
+    @RequestMapping("/post/{id}")
     public String displayPost(@PathVariable Long id, Model model){
         Post retrievedPost = postStorage.findPostById(id);
         model.addAttribute("post", retrievedPost);
-        return "post-view";
+        return "post";
     }
-//    @GetMapping("posts/{postTitle}")
-//    public String showSinglePost(@PathVariable String postTitle, Model model) {
-//        Long postId = null;
-//        model.addAttribute("postToDisplay", postStorage.findPostById(postId));
-//        return "post-template";
-//    }
+    @GetMapping("posts/{postTitle}")
+    public String showSinglePost(@PathVariable String postTitle, Model model) {
+        Long postId = null;
+        model.addAttribute("postToDisplay", postStorage.findPostById(postId));
+        return "post";
+    }
 
 //    @PostMapping("posts/add")
 //    public String addPost(String title, String Category, String publishDate, String body, long... authorIds) {

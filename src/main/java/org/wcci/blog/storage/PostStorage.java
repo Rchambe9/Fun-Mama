@@ -1,8 +1,12 @@
 package org.wcci.blog.storage;
 
 import org.springframework.stereotype.Service;
+import org.wcci.blog.entities.Author;
 import org.wcci.blog.entities.Post;
+import org.wcci.blog.exceptions.ResourceNotFoundException;
 import org.wcci.blog.storage.repositories.PostRepository;
+
+import java.util.Optional;
 
 @Service
 public class PostStorage {
@@ -14,31 +18,23 @@ public class PostStorage {
     }
 
     public Post findPostById(Long id) {
-        return findPostById(id);
+        Post retrievedPost;
+        Optional<Post> postOptional = postRepo.findById(id);
+        if(postOptional.isPresent()) {
+            retrievedPost = postOptional.get();
+            return retrievedPost;
+        }
+        throw new ResourceNotFoundException("Author not found.");
     }
 
+    public void add(Post postToAdd) {
+        postRepo.save(postToAdd);
+    }
+
+    public Iterable<Post> findAllPosts(){
+        return postRepo.findAll();
+    }
 }
-//    public Iterable<Post> findPostById(Long id) {
-//        return postRepo.findByPostId(id);
-//    }
-//
-//    @Override
-//    public void add(Post postToAdd) {
-//        postRepo.save(postToAdd);
-//    }
-
-//    public Iterable<Post> findAllPosts{
-//        return postRepo.findAll();
 
 
-//    public Post findPostById(Long id) {
-//    }
 
-//    public void save(Post postToAddHashtagTo) {
-
-
-//    @Override
-//    public void deleteById(long id) {
-//        postRepo.deleteById(id);
-//    }
-//

@@ -1,37 +1,38 @@
 package org.wcci.blog.entities;
 
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.ManyToMany;
+import java.util.ArrayList;
+import java.util.Collection;
 
+@Entity
 public class Hashtag {
-    private String postTitle;
-    private String postAuthor;
-    private String postPublishDate;
-    private int rating;
-    private String comment;
+    @Id
+    @GeneratedValue
+    private long id;
+    private String tagName;
+    @ManyToMany (mappedBy = "hashtags")
+    private Collection<Post> posts = new ArrayList<>();
 
     protected Hashtag() {}
 
-    public Hashtag(String postTitle, String postAuthor, String postPublishDate, int rating, String comment ) {
-        this.postTitle = postTitle;
-        this.postAuthor = postAuthor;
-        this.postPublishDate = postPublishDate;
-        this.rating = rating;
-        this.comment = comment;
+    public Hashtag(String tagName) {
+        this.tagName = tagName;
+
     }
 
-    public String getPostTitle() { return postTitle; }
+    public long getId() {return id;}
+    public String getTagName(){return tagName;}
 
-    public String getPostAuthor() {
-        return postAuthor;
+    public void setTagName(String tagName){
+        this.tagName = tagName;
     }
-
-    public String getPostPublishDate() { return postPublishDate; }
-
-    public int getRating() { return rating;}
-
-    public String getComment(){ return comment; }
-
-
+    public void addPost(Post post){
+        this.posts.add(post);
+    }
 
 }
 
