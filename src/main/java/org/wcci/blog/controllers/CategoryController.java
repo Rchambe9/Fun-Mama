@@ -22,7 +22,7 @@ public class CategoryController {
     @RequestMapping({"/categories", "/", ""})
     public String displayCategories(Model model) {
         model.addAttribute("categories", categoryStorage.findAllCategories());
-        return "category-view";
+        return "categories-template";
     }
 
     @GetMapping("/categories/{categoryName}")
@@ -30,7 +30,7 @@ public class CategoryController {
         Category retrievedCategory = categoryStorage.findCategoryByCategoryName(categoryName);
         model.addAttribute("category", retrievedCategory);
 
-        return categoryName;
+        return "category";
     }
 }
 

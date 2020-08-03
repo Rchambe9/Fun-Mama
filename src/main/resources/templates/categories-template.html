@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Hashtag Template</title>
+    <link rel="stylesheet" href="/static/css/style.css"/>
+    <link rel="stylesheet" href="/static/css/layout.css"/>
+</head>
+<body>
+<div class="header">
+    <h2>Fun Grandma</h2>
+    <h5>Activities 4 Kids</h5>
+</div>
+<div class="container">
+
+    <img src="images\kidsrunning.jpg" alt="kids" style="width:80%;">
+
+    <div class="container-category">
+        <ul class="category__list">
+            <li th:each="category:${categories}" class="category__section">
+                <a th:href="'/categories/' + ${category.categoryName}" th:text="${category.categoryName}" class="category__link"></a>
+            </li>
+
+
+        </ul>
+    </div>
+</div>
+</body>

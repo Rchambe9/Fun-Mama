@@ -11,10 +11,14 @@ import org.wcci.blog.storage.AuthorStorage;
 
 @Controller
 public class AuthorController {
-    AuthorStorage authorStorage;
+    private AuthorStorage authorStorage;
 
     public AuthorController(AuthorStorage authorStorage){
         this.authorStorage = authorStorage;
+    }
+
+    public AuthorStorage getAuthorStorage() {
+        return authorStorage;
     }
 
     @GetMapping("/author/{id}")

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <h1 style="text-align: center;">Fun Grandma</h1>
+    <h2 style="text-align: center;"> Activities 4 kids</h2>
+    <title>Home</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="src\main\resources\static\css\indexCss.css">
+
+
+   
+</head>
+<body>
+   
+    <div class="container">
+      
+      <img src="src\main\resources\static\images\kidsrunning.jpg" alt="kids" style="width:80%;">
+  
+      <div class="container-category">
+        <ul class="category__list">
+  
+            <li class="category__section">
+                 <a href="activitiescrafts.html" class="category__link">Activities & Crafts</a>
+            </li>
+            <li class="category__section">
+                <a href="childevelopment.html" class="category__link">Child Development</a>
+            </li>
+            <li class="category__section">
+              <a href="ResourceGuide.html" class="category__link">Resource Guide</a>
+            </li>
+        </ul>
+      </div>
+    
+    <div class="row">
+        <div class="leftcolumn">
+            <div class="card">
+                <h2 a th:text="${post.title}" th:href="@{'/posts/'+${post.title}}" class="posts__link">Rock, Paper, Numbers</a></h2>
+                <h3 th:text="${author.firstName} + ' ' + ${author.lastName}" class="author__name">Paulette Nix </h3>
+                <p th:text="${postToDisplay.publishDate}" class="post__publishDate">Date Published: Jan 18,2020</p>
+                <img src="images\download (1).jpg" alt="art" style="width:80%;"></img>
+                <p>Rock paper scissors is a game we all played as kids, but now you can play this game with your own kids to teach numbers and counting.</p>
+                  
+                  <a href="childevelopment.html" target="_blank">Read more</a>
+                
+                  
+            </div>
+
+            <div class="card">
+              <h2 a th:text="${post.title}" th:href="@{'/posts/'+${post.title}}" class="posts__link">Color/Paint By Number</a></h2>
+              <h3 th:text="${author.firstName} + ' ' + ${author.lastName}" class="author__name">David Williams</h3>
+              <p th:text="${postToDisplay.publishDate}" class="post__publishDate">Date Published: March 27,2020</p>
+                <img src="images\paint by number.jpg" alt="coloring" style="width:80%;"></img>
+                <p>As a child, I remember playing connect the dots. What's great to know now is you can use this same game to teach number sequence.</p>
+                <a href="childevelopment.html" target="_blank">Read more</a>
+                  
+            </div>
+
+            <div class="card">
+                <h2 a th:text="${post.title}" th:href="@{'/posts/'+${post.title}}" class="posts__link">Paper Plate Flowers</a></h2>
+                <h3 th:text="${author.firstName} + ' ' + ${author.lastName}" class="author__name">Robyn Chambers</h3>
+                <p th:text="${postToDisplay.publishDate}" class="post__publishDate">Date Published: May 5,2020</p>
+                <img src="images\PaperPlateFlowers.jpg"alt="art" style="width:80%;"></img>
+                <p>These paper plate flowers are a great way to celebrate summertime fun. </p>
+                    <a href="activitiescrafts.html" target="_blank">Read more</a>
+              </div>
+            
+            <div class="card">
+                <h2 a th:text="${post.title}" th:href="@{'/posts/'+${post.title}}" class="posts__link">Painted Rainbow Rock Pets</a></h2>
+                <h3 th:text="${author.firstName} + ' ' + ${author.lastName}" class="author__name">Robyn Chambers</h3>
+                <p th:text="${postToDisplay.publishDate}" class="post__publishDate">Date Published: June 13,2020</p>
+                <img src="images\RainbowRocks.jpg" alt="art" style="width:80%;"></img>
+                <p>This is a fun, low cost activity your kids will love!</p>
+                <a href="activitiescrafts.html" target="_blank">Read more</a>
+            </div>
+        </div>
+        <div class="rightcolumn">
+            <div class="card">
+              <h2>Find Posts By Hashtag!</h2>
+              <img src="images\hashtoag.jpg" alt="art" style="width:80%;"></img>
+              <p>Look for posts by hashtag or add your own!</p>
+              <li><a href="hashtag-activitiesCrafts.html">#FreeFun</a></li>
+              <li><a href="hashtag-activitiesCrafts.html">#Summertime</a></li>
+              <li><a href="../../../../hashtag-childDevelopment.html">#LearningIsFun</a></li>
+              <li><a href="../../../../hashtag-childDevelopment.html">#GetOutdoors</a></li>
+            </div>
+           
+            <div class="card">
+              <h3>Follow Us</h3>
+                <a href="#"><i class="fa fa-facebook"></i></a>
+                <a href="#"><i class="fa fa-instagram"></i></a>
+                <a href="#"><i class="fa fa-twitter"></i></a>
+                <a href="#"><i class="fa fa-pinterest"></i></a>
+            </div>
+            </div>
+          </div>
+    
+        
+        <div class="footer">
+          <h2>&copyFun Grandma 2020</h2>
+        </div>
+         
+</body>
+</html>

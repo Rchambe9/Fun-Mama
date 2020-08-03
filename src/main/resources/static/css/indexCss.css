@@ -1,0 +1,133 @@
+@import url("src\main\resources\static\css\fonts.css");
+:root{
+
+    /*theme colors*/
+    --text-gray:#3f4954;
+    --tex-light:#686666da;
+    --bg-color:#0f0f0f;
+    --white:#ffffff;
+    --midnight:#104f55;
+
+    --Abel:'Abel',cursive;
+    --Anton:'Anton',cursive;
+    --Josefin_Sans:'Josefin_Sans',cursive;
+    --Lexend_Deca:'Lexend_Deca',cursive;
+    --Livvic:'Livvic',cursive;
+    --sky:linear-gradient(120deg, #a1c4fd 0%, #c2efb 100%);
+
+}
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--Lexend_Deca);
+    padding: 20px;
+    background: #f1f1f1;
+}
+h1 {
+    font-family: var(--Lexend_Deca);
+    font-size: 2.5rem;
+    padding-bottom: 0rem;
+}
+
+.header {
+    padding: 30px;
+    font-size: 40px;
+    text-align: center;
+    background: white;
+}
+
+
+.leftcolumn {
+    float: left;
+    width: 75%;
+}
+
+
+.rightcolumn {
+    float: left;
+    width: 25%;
+    padding-left: 20px;
+}
+
+.img {
+    background-color: #aaa;
+    width: 100%;
+    padding: 20px;
+}
+
+
+.card {
+    background-color: white;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+
+.footer {
+    padding: 20px;
+    text-align: center;
+    background: #ddd;
+    margin-top: 20px;
+}
+
+@media screen and (max-width: 800px) {
+    .leftcolumn, .rightcolumn {
+        width: 100%;
+        padding: 0;
+    }
+    a:link {
+        background-color: transparent;
+        color: white;
+        padding: 14px 25px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+    }
+
+    a:hover, a:active {
+        background-color: whitesmoke;
+    }
+    .fa {
+        padding: 20px;
+        font-size: 30px;
+        width: 50px;
+        text-align: center;
+        text-decoration: none;
+        margin: 5px 2px;
+    }
+
+    .fa:hover {
+        opacity: 0.7;
+    }
+
+    .fa-facebook {
+        background: #3B5998;
+        color: white;
+    }
+
+    .fa-twitter {
+        background: #55ACEE;
+        color: white;
+    }
+
+    .fa-pinterest {
+        background: #cb2027;
+        color: white;
+    }
+
+    .fa-instagram {
+        background: #125688;
+        color: white;
+    }
+
+
+}

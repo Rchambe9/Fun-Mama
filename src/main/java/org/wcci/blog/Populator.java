@@ -22,7 +22,7 @@ public class Populator implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-        Category activitiesAndCrafts = new Category("Activities & Crafts");
+        Category activitiesAndCrafts = new Category("Activities and Crafts");
         Category childDevelopment = new Category("Child Development");
         Category resourceGuide = new Category("Resource Guide");
         categoryRepo.save(activitiesAndCrafts);
