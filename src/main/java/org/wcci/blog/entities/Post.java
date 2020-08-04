@@ -10,9 +10,11 @@ public class Post {
     @Id
     @GeneratedValue
     private long id;
+    private String imageUrl;
+    @Column(length = 100000)
+    @Lob
     private String body;
     private LocalDate publishDate;
-    private String summary;
     @ManyToOne
     private Author author;
     @ManyToOne
@@ -21,40 +23,42 @@ public class Post {
     @ManyToMany
     private Collection<Hashtag> hashtags;
 
-// constructor for post class
-    public Post(String title, Author author, String publishDate, String summary, String body, Category category, Hashtag... hashtags) {
+    // constructor for post class
+    public Post(String title, Author author, String publishDate, String imageUrl, String body, Category category, Hashtag... hashtags) {
         this.title = title;
+        this.imageUrl = imageUrl;
         this.body = body;
         this.publishDate = LocalDate.parse(publishDate);
         this.author = author;
         this.category = category;
         this.hashtags = new ArrayList<>(Arrays.asList(hashtags));
-        this.summary = summary;
 
     }
-    protected Post() {}
 
-    public Post(String title, Author author, String publishDate, String summary) {
-        this.title = title;
-        this.author = author;
-        this.publishDate = LocalDate.parse(publishDate);
-        this.author = author;
-        this.summary = summary;
+    protected Post() {
     }
 
-    public long getId() { return id; }
+
+    public long getId() {
+        return id;
+    }
 
     public String getTitle() {
         return title;
     }
 
-    public Author getAuthor() { return author; }
+    public Author getAuthor() {
+        return author;
+    }
+
+    public String getImageUrl() {
+        return imageUrl;
+    }
 
     public String getBody() {
         return body;
     }
 
-    public String getSummary(){ return summary; }
 
     public Category getCategory() {
         return category;
@@ -64,9 +68,14 @@ public class Post {
         return publishDate;
     }
 
-    public Collection<Hashtag> getHashtags(){ return hashtags;}
+    public Collection<Hashtag> getHashtags() {
+        return hashtags;
+    }
 
-    public void addHashtag(Hashtag hashtag) {hashtags.add(hashtag);}
+    public void addHashtag(Hashtag hashtag) {
+        hashtags.add(hashtag);
+    }
+
     @Override
     public String toString() {
         return "Post{" +
@@ -74,7 +83,6 @@ public class Post {
                 ", title='" + title + '\'' +
                 ", author='" + author + '\'' +
                 ", publishDate='" + publishDate + '\'' +
-                ", summary='" + summary + '\'' +
                 ", body='" + body + '\'' +
                 ", category=" + category +
                 '}';
@@ -90,7 +98,7 @@ public class Post {
                 Objects.equals(title, post.title) &&
                 Objects.equals(publishDate, post.publishDate) &&
                 Objects.equals(body, post.body);
-        }
+    }
 
     @Override
     public int hashCode() {
@@ -98,9 +106,6 @@ public class Post {
         return Objects.hash(id, title, publishDate, body, category);
 
     }
-
-
-
 
 
 }
