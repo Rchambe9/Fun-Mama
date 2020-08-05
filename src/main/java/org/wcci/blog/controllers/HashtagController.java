@@ -2,30 +2,40 @@ package org.wcci.blog.controllers;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 import org.wcci.blog.entities.Hashtag;
+import org.wcci.blog.entities.Post;
 import org.wcci.blog.storage.HashtagStorage;
+import org.wcci.blog.storage.PostStorage;
 
 @Controller
 public class HashtagController {
-    private Hashtag hashtag;
+    private HashtagStorage hashtagStorage;
+    private PostStorage postStorage;
 
-
-    @RequestMapping("/hashtag")
-    public String retrieveHashtag(Model model) {
-        model.addAttribute("hashtagToDisplay", hashtag);
-        return "hashtag";
+    public HashtagController(HashtagStorage hashtagStorage, PostStorage postStorage) {
+        this.hashtagStorage = hashtagStorage;
+        this.postStorage = postStorage;
     }
 
-
-    @GetMapping("hashtags/{hashtagTagName}")
-    public String showSingleHashtag(@PathVariable String hashtagTagName, Model model) {
-        Long hashtagId = null;
-        HashtagStorage hashtagStorage = null;
-        model.addAttribute("hashtagToDisplay", hashtagStorage.findHashtagById(hashtagId));
+    @GetMapping("/hashtags/{hashtagId}")
+    public String showSingleHashtag(@PathVariable long hashtagId, Model model) {
+        model.addAttribute("hashtag", hashtagStorage.findHashtagById(hashtagId));
         return "hashtag";
+    }
+    @GetMapping("/hashtags/")
+    public String showAllHashtags(Model model){
+        model.addAttribute("hashtags", hashtagStorage.findAllHashtags());
+        return "hashtags-template";
+    }
+    @PostMapping("/hashtags/")
+    public String addHashtag(@RequestParam String hashtagName, @RequestParam long postId){
+        Hashtag hashtag = new Hashtag(hashtagName);
+        hashtagStorage.save(hashtag);
+        Post post = postStorage.findPostById(postId);
+        post.addHashtag(hashtag);
+        postStorage.add(post);
+        return "redirect:/categories/"+post.getCategory().getCategoryName();
     }
 }
 

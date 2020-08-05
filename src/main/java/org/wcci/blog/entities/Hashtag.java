@@ -27,6 +27,10 @@ public class Hashtag {
     public long getId() {return id;}
     public String getTagName(){return tagName;}
 
+    public Collection<Post> getPosts() {
+        return posts;
+    }
+
     public void setTagName(String tagName){
         this.tagName = tagName;
     }
