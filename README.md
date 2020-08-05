@@ -1,11 +1,11 @@
-# Blog Site
+# Fun Mama Blog 
 
-## Module 3 Mastery Project
+## Module 3 Mastery Project WCCI
 
 ### Goals
-Build a dynamic web application with a MVC architecture. 
-- Use TDD to create a suite of unit tests and integration tests.
-- Keep your code clean.
+To build a dynamic web application with a MVC architecture. 
+- I used TDD to create a suite of unit tests and integration tests.
+- I kept my code clean by:
   - Follow We Can Code IT's Java Style guide when writing your code.
   - Use proper naming conventions.
   - Make clear and concise names for methods and variables.
