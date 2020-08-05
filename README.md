@@ -19,4 +19,4 @@ Build a dynamic web application with a MVC architecture.
   - Upon submission we should have an application that starts and passes all tests in the test folder.
   - Prepare a custom README.md file.  Smart Columbus Open Data Enthusiasts provide a good resource for what an README.md could look like [here.](https://github.com/SCODEMeetup/scode-repo-template/blob/master/README.md)
  ### Resources
- In addition to [We Can Code IT materials](https://wecancodeit-materials.netlify.com/cohorts/java/module-three/), we've included a [HELP.md](./HELP.md) file that is provided by Spring Initializr to help with Spring documentation.
+ In addition to [We Can Code IT materials](https://wecancodeit-materials.netlify.com/cohorts/java/module-three/), we've included a [HELP.md](./HELP.md) file that is provided by Spring Initializr to help with Spring documentation.# Fun-Mama
