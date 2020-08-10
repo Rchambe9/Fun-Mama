@@ -36,7 +36,6 @@ html,body {
 }
 .ul .nav-items{
     list-style-type: none;
-
 }
 .nav .nav-items{
     display: flex;
@@ -58,29 +57,34 @@ html,body {
     overflow: hidden;
     transition: height 1s ease-in-out;
 }
-.nav .nav-menu{
+.nav .nav-menu {
     justify-content: space-between;
+}
+
 a {
     text-decoration: none;
     color: var(--text-gray);
 }
 
-
-h1{
+h1 {
     font-family: var(--Lexend_Deca);
     font-size: 2.5rem;
     padding-bottom: 0rem;
 }
-h2{
-    padding-top:  0rem;
+
+h2 {
+    padding-top: 0rem;
     font-family: var(--Lexend_Deca);
 
 }
-h3{
+
+h3 {
     font-family: var(--Abel);
     font-size: 2.0rem;
+   
 }
-button.btn{
+
+button.btn {
     border: none;
     border-radius: 2rem;
     padding: 1rem 3rem;
@@ -88,33 +92,40 @@ button.btn{
     font-family: var(--Livvic);
     cursor: pointer;
 }
-span{
+
+span {
     font-family: var(--Abel);
 }
-.container{
+
+.container {
     position: relative;
     text-align: center;
     color: blueviolet;
     margin: 0 5vw;
+    font-size: 10px;
+    font-weight: 200;
 }
-.bottom-left{
+p {
+    text-align: left;
+    color: black;
+}
+.centered {
+    position: absolute;
+    top: 80%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }  
+.bottom-left {
     position: absolute;
     bottom: 8px;
     left: 16px;
 }
 
-post.detail.text{
+post.detail.text {
     position: absolute;
 }
 
-
-
-/*------------x--------Global Classes-----------x--------*/
-
-
-/*---------------navbar----------------*/
-
-.nav{
+.nav {
     background-color: white;
     padding: 0 2rem;
     height: 1px;
@@ -123,12 +134,9 @@ post.detail.text{
     transition: height 1s ease-in-out;
     justify-content: space-between;
     padding-left: 50px;
-
-
 }
 
-
-.nav .toggle-collapse{
+.nav .toggle-collapse {
     position: absolute;
     top: 0%;
     width: 90%;
@@ -136,69 +144,38 @@ post.detail.text{
     display: none;
 }
 
-.nav .toggle-collapse .toggle-icons{
+.nav .toggle-collapse .toggle-icons {
     display: flex;
     justify-content: flex-end;
     padding: 1.7rem 0;
 }
 
-.nav .toggle-collapse .toggle-icons i{
+.nav .toggle-collapse .toggle-icons i {
     font-size: 1.4rem;
     color: var(--text-gray);
 }
 
-.collapse{
-    height: 30rem;
-}
-.ul .headings__list{
-    list-style: none;
-    padding-left: 15px;
-    
-} 
-    display: flex;
-    margin: 0;
-    justify-content: space-between;
-}
-.nav .nav-items .nav-link{
-    padding: 1.6rem 1rem;
-    font-size: l.1rem;
-    position: relative;
-    font-family: var(--Abel);
-    font-size: 1.1rem;
-}
-.nav .nav-brand a{
-    font-size: 1.6rem;
-    padding: 1rem 0;
-    display: block;
-    font-family: var(--Lexend_Deca);
-    font-size: 1.6rem;
-}
-
-.nav .nav-items .nav-link:hover{
+.nav .nav-items .nav-link:hover {
     background-color: var(--midnight);
 }
 
-.nav .nav-items .nav-link:hover a{
+.nav .nav-items .nav-link:hover a {
     color: var(--white);
 }
-.nav-social{
+
+.nav-social {
     padding: 1.4rem 0;
 }
 
-.nav.social i{
+.nav.social i {
     padding: 0 .2rem;
 }
 
-.nav.social i:hover{
+.nav.social i:hover {
     color: #a1c4cf;
 }
 
-/*---------x-----navbar---------x------*/
-
-/*-------------Main Content-------------*/
-
-/*-------------Site Title-------------*/
-.main .site-title{
+.main .site-title {
     background: url(assets\Background-image.png);
     background-size: cover;
     height: 110vh;
@@ -206,27 +183,29 @@ post.detail.text{
     justify-content: center;
 
 }
-.main .site-title .site-background{
+
+.main .site-title .site-background {
     padding: 10rem;
     text-align: center;
     /*color: var(--white);*/
 }
-.main .site-title h1, h3{
+
+.main .site-title h1, h3 {
     margin: 3rem;
 }
-.main .site-title .btn{
+
+.main .site-title .btn {
     margin: 1.8rem;
     background: var(--sky);
 }
-.main .site-title .btn:hover{
+
+.main .site-title .btn:hover {
     background: transparent;
     border: 1px solid var(--white);
     color: var(--white);
 }
-/*-----x-------Site Title-----x--------*/
 
-/*--------Blog Carousel----------------*/
-.main .blog{
+.main .blog {
     background: url(assets\Abract01.png);
     background-repeat: no-repeat;
     background-position: right;
@@ -234,41 +213,30 @@ post.detail.text{
     width: 100%;
     background-size: 65%;
 }
-.main .blog .blog-post{
+
+.main .blog .blog-post {
     padding-top: 6rem;
 }
-.main .blog-post .blog-content{
+
+.main .blog-post .blog-content {
     display: flex;
     flex-direction: column;
     text-align: center;
     width: 80%;
     margin: 3rem 2rem;
-    box-shadow: 0 15px 20px rgba(0,0,0,0.2);
-}
-.main .blog-content .blog-title{
-    padding: 2rem 0;
-}
-.main .blog-content .btn-blog{
-    padding: .7rem 2rem;
-    background: var(--sky);
-    margin: .5rem   ;
+    box-shadow: 0 15px 20px rgba(0, 0, 0, 0.2);
 }
 
-.main .blog-content span{
+.main .blog-content span {
     display: block;
 }
 
-/*---x----Blog Carousel-------x--------*/
-
-/*-------------Main Content-------------*/
-
-/*     Viewport less then or equal to 750px*/
-
-@media only screen and (max-width: 750px){
-    .nav .nav-menu, .nav .nav-items{
+@media only screen and (max-width: 750px) {
+    .nav .nav-menu, .nav .nav-items {
         flex-direction: column;
     }
-    .nav .toggle-collapse{
+
+    .nav .toggle-collapse {
         display: initial;
     }
 }
@@ -293,14 +261,81 @@ a:hover {
 a:active {
     text-decoration: underline;
 }
-main{
+
+main {
     background-color: var(--background-color);
     color: var(--primary-color);
 }
-.container{
 
-}
-.header{
+
+.header {
     background-color: var(--background-color);
     color: var(--secondary-color);
 }
+.footer {
+    padding: 20px;
+    text-align: center;
+    background: #ddd;
+    margin-top: 20px;
+}
+* {
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial;
+    padding: 20px;
+    background: #f1f1f1;
+  }
+  
+  .header {
+    padding: 30px;
+    font-size: 40px;
+    text-align: center;
+    background: white;
+  }
+  
+  .leftcolumn {
+    float: left;
+    width: 75%;
+  }
+  
+  .rightcolumn {
+    float: left;
+    width: 25%;
+    padding-left: 20px;
+  }
+
+  .img {
+    width: 100%;
+    padding: 20px;
+  }
+  
+  .card {
+     background-color: white;
+     padding: 20px;
+     margin-top: 20px;
+  }
+  
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  
+
+  .footer {
+    padding: 20px;
+    text-align: center;
+    background: #ddd;
+    margin-top: 20px;
+  }
+  
+  @media screen and (max-width: 800px) {
+    .leftcolumn, .rightcolumn {   
+      width: 100%;
+      padding: 0;
+    }
+  }
+
+  

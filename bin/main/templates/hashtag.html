@@ -13,42 +13,41 @@
 
     <main>
        
-        <h2 th:text = "${hashtag.postTitle}" class="hashtag__postTitle">Adventures on a Budget</h2>
-        <p th:text = "${hashtag.posts}" class="hashtag__post">A great article for free activities with kids.</p>
+        <h2 th:text = "${hashtag.tagName}" class="hashtag__tagName">Adventures on a Budget</h2>
         <ul class="posts__list">
             <li th:each="post: ${hashtag.posts}" class="posts__list-item">
-                <a th:text= "${post.postTitle}" th:href="@{'/posts/'+${post.postTtitle}}" class="posts__link">Great at home summer activities for kids</a>
+                <a th:text= "${post.category.categoryName}" th:href="@{'/categories/'+${post.category.categoryName}}" class="posts__link">Great at home summer activities for kids</a>
             </li>
         </ul>
-        <form action="/hashtag/add" method="POST">
-            <h3>New Hashtag:</h3>
-            <label>
-                Title:
-            </label>
-            <input type="text" name="title" id="">
-            <label>
-                Today's Date:
-            </label>
-            <input type="text" name="publishDate" id="">
-            <label>
-                Category:
-            </label>
-            <input type="text" name="category" id="">
-            <label>
-                Author:
-            </label>
-            <input type="text" name="author" id="">
-            <label>
-                Body:
-            </label>
-            <input type="text" name="body" id="">
+<!--        <form action="/hashtag/add" method="POST">-->
+<!--            <h3>New Hashtag:</h3>-->
+<!--            <label>-->
+<!--                Title:-->
+<!--            </label>-->
+<!--            <input type="text" name="title" id="">-->
+<!--            <label>-->
+<!--                Today's Date:-->
+<!--            </label>-->
+<!--            <input type="text" name="publishDate" id="">-->
+<!--            <label>-->
+<!--                Category:-->
+<!--            </label>-->
+<!--            <input type="text" name="category" id="">-->
+<!--            <label>-->
+<!--                Author:-->
+<!--            </label>-->
+<!--            <input type="text" name="author" id="">-->
+<!--            <label>-->
+<!--                Body:-->
+<!--            </label>-->
+<!--            <input type="text" name="body" id="">-->
 
-            <select name="authorIds" multiple id="">
-                <option th:each="author: ${authors}" th:value="${author.id}" th:text="${author.name}"></option>
-            </select>
-            <input type="hidden" name="hashtag" th:value = "${hashtag.postTitle}" id="">
-            <button type="Click Here">Add A New hashtag</button>
-        </form>
+<!--            <select name="authorIds" multiple id="">-->
+<!--                <option th:each="author: ${authors}" th:value="${author.id}" th:text="${author.name}"></option>-->
+<!--            </select>-->
+<!--            <input type="hidden" name="hashtag" th:value = "${hashtag.postTitle}" id="">-->
+<!--            <button type="Click Here">Add A New hashtag</button>-->
+<!--        </form>-->
     </main>
 </div>
 </body>
