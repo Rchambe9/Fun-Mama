@@ -11,5 +11,5 @@ meaning...
 # Also...
 
 - I have made effective use of git and GitHub by making frequent commits.
-- Created dynamic content and the ability for viewers to add content to the application through an HTML form.
+- I created dynamic content with the ability for viewers to add content to the application through an HTML form.
   
